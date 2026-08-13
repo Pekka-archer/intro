@@ -1,0 +1,1219 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>林子杰 - 通信AI算法实习 简历</title>
+    <meta name="description" content="林子杰的个人简历，求职意向为通信AI算法实习。">
+    
+    <!-- ！！性能优化：增加 defer 属性，实现非阻塞异步下载 ！！ -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
+
+    <style>
+        /* ================= 核心变量 ("深空极客" Apple Bento 科技风) ================= */
+        :root {
+            --c-bg: #0B1120; 
+            --c-surface: rgba(30, 41, 59, 0.4); 
+            --c-text-main: #F8FAFC;
+            --c-text-muted: #94A3B8;
+            --c-text-light: #64748B;
+            
+            --c-primary: #00F0FF; 
+            --c-primary-hover: #00C3FF;
+            --c-primary-light: rgba(0, 240, 255, 0.15);
+            --c-primary-glow: rgba(0, 240, 255, 0.4);
+            
+            --c-border: rgba(255, 255, 255, 0.08); 
+            --c-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+            --c-shadow-hover: 0 20px 40px -10px rgba(0, 0, 0, 0.7), 0 0 20px var(--c-primary-light);
+            
+            --c-nav-bg: rgba(11, 17, 32, 0.75);
+
+            --radius-md: 12px;
+            --radius-lg: 20px;
+            --radius-full: 9999px; 
+            
+            --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            --transition-bounce: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+            
+            --font-main: "Helvetica Neue", Helvetica, Arial, "Microsoft YaHei", sans-serif;
+            --font-display: "Helvetica Neue", Helvetica, Arial, sans-serif; 
+            
+            --max-width: 1200px;
+            --nav-height: 80px;
+        }
+
+        /* ================= 全局设定 ================= */
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; font-family: var(--font-main); font-size: 16px; line-height: 1.6; color: var(--c-text-main); background-color: var(--c-bg); transition: background-color 0.4s ease, color 0.4s ease; }
+        body { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; overflow-x: hidden; }
+        a { text-decoration: none; color: var(--c-text-main); transition: var(--transition); }
+        a:hover { color: var(--c-primary); }
+        ul, ol { list-style: none; }
+        button { cursor: pointer; border: none; background: none; font-family: inherit; }
+        svg { fill: currentColor; }
+
+        ::selection { background: var(--c-primary); color: #000000; }
+
+        .container { max-width: var(--max-width); margin: 0 auto; padding: 0 40px; }
+        
+        section { padding: 80px 0; scroll-margin-top: var(--nav-height); border-top: 1px solid rgba(255,255,255,0.03); margin-top: 20px;}
+        
+        .section-title { 
+            font-size: 2.2rem; font-weight: 800; text-transform: uppercase; margin-bottom: 2rem; 
+            letter-spacing: 2px; color: #ffffff; text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+        }
+        .split-word-wrap { display: inline-block; overflow: hidden; vertical-align: top; margin-right: 0.3em; padding-bottom: 5px; }
+        .split-word { display: inline-block; }
+
+        /* GSAP 开场：全局纯黑幕布 */
+        .global-curtain {
+            position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+            background-color: #0B1120; z-index: 9999; pointer-events: none;
+        }
+
+        /* ================= 导航栏 ================= */
+        .navbar { 
+            position: fixed; top: 0; width: 100%; height: var(--nav-height); 
+            background: transparent; z-index: 1000; opacity: 0; 
+            transition: background 0.5s, box-shadow 0.5s, border 0.5s; 
+            color: #ffffff; border-bottom: 1px solid transparent;
+        }
+        .navbar.scrolled { 
+            background: var(--c-nav-bg); backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px); 
+            border-bottom: 1px solid var(--c-border); box-shadow: 0 10px 30px -10px rgba(0,0,0,0.5); 
+        }
+        .nav-container { display: flex; justify-content: space-between; align-items: center; height: 100%; max-width: var(--max-width); margin: 0 auto; padding: 0 40px; }
+        .nav-logo { font-weight: 800; font-size: 1.5rem; letter-spacing: 2px; }
+        .nav-links { display: flex; gap: 32px; }
+        .nav-links a { font-size: 0.85rem; font-weight: 600; letter-spacing: 1px; color: var(--c-text-muted); display: flex; align-items: center; position: relative; transition: var(--transition); }
+        .nav-links a:hover, .nav-links a.active { color: var(--c-text-main); text-shadow: 0 0 10px rgba(255,255,255,0.3); }
+        .nav-actions { display: flex; gap: 16px; align-items: center; }
+        .icon-btn { width: 36px; height: 36px; color: var(--c-text-muted); transition: var(--transition); background: rgba(255,255,255,0.05); border-radius: var(--radius-full); display:flex; align-items: center; justify-content: center;}
+        .icon-btn:hover { color: var(--c-primary); background: rgba(0, 240, 255, 0.1); box-shadow: 0 0 15px var(--c-primary-light); }
+
+        /* ================= 首屏排版 ================= */
+        .hero { 
+            min-height: 100vh; padding-top: var(--nav-height); position: relative; display: flex; flex-direction: column; 
+            color: #ffffff; overflow: hidden; border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .hero-video-wrapper { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; background-color: #0B1120; transform-origin: center center; }
+        .hero-video-wrapper video { width: 100%; height: 100%; object-fit: cover; object-position: center; opacity: 0.6; }
+        .hero-video-overlay {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(180deg, rgba(11, 17, 32, 0.4) 0%, rgba(11, 17, 32, 0.1) 50%, #0B1120 100%);
+        }
+        
+        .hero-massive-title {
+            font-size: 19vw; font-weight: 900; line-height: 0.8;
+            text-transform: uppercase; text-align: center; letter-spacing: 0.08em;
+            margin-top: 2vh; user-select: none; white-space: nowrap; width: 100%;
+            position: relative; z-index: 2;
+        }
+        .hero-massive-title .hidden-text { visibility: hidden; pointer-events: none; }
+
+        #particle-title-wrapper { position: relative; }
+        .scanner-line {
+            position: absolute; top: 0; bottom: 0; left: 0; width: 3px;
+            background: var(--c-primary); box-shadow: 0 0 25px 5px var(--c-primary-glow);
+            z-index: 10; opacity: 0; pointer-events: none;
+        }
+
+        #particle-title-container {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            filter: drop-shadow(0 0 25px rgba(0, 240, 255, 0.3)); 
+            pointer-events: auto; cursor: crosshair; 
+            clip-path: inset(0 100% 0 0); 
+        }
+
+        .hero-center-desc {
+            max-width: 860px; margin: 1vh auto 4vh auto; padding-right: 220px; 
+            text-align: left; font-size: 1.15rem; font-weight: 400; color: rgba(255, 255, 255, 0.85);
+            line-height: 1.8; letter-spacing: 1px; text-shadow: 0 4px 12px rgba(0,0,0,0.8);
+            position: relative; z-index: 2; opacity: 0; 
+        }
+
+        .hero-bottom-grid {
+            display: flex; justify-content: space-between; align-items: flex-end;
+            margin-top: auto; padding-bottom: 60px; position: relative; z-index: 2;
+            padding-left: 40px; padding-right: 40px; max-width: var(--max-width); margin-left: auto; margin-right: auto; width: 100%;
+        }
+
+        .hero-stat-block { display: flex; flex-direction: column; gap: 8px; z-index: 5; opacity: 0; }
+        .stat-slash { font-size: 1.2rem; letter-spacing: 4px; font-style: italic; color: var(--c-primary); opacity: 0.6; }
+        .stat-number { font-size: 4rem; font-weight: 800; color: #ffffff; line-height: 1; text-shadow: 0 0 20px rgba(255,255,255,0.2); }
+        .stat-label { font-size: 1.1rem; font-weight: 500; margin-bottom: 24px; color: var(--c-text-muted); }
+        
+        .contact-bar { display: flex; flex-wrap: wrap; gap: 12px; }
+        .contact-item { 
+            display: flex; align-items: center; justify-content: center; gap: 8px; 
+            padding: 12px 24px; background: rgba(255, 255, 255, 0.05); border: 1px solid var(--c-border); 
+            border-radius: var(--radius-full); font-size: 0.85rem; font-weight: 500; letter-spacing: 1px;
+            color: #ffffff; backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+            position: relative; overflow: hidden; z-index: 1; transition: var(--transition-bounce);
+        }
+        .contact-item::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(135deg, rgba(0, 240, 255, 0.2), rgba(59, 130, 246, 0.2)); opacity: 0; transition: var(--transition); z-index: -1; }
+        .contact-item:hover { border-color: rgba(0, 240, 255, 0.4); box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.5), 0 0 15px var(--c-primary-glow); transform: translateY(-3px) scale(1.02); }
+        .contact-item:hover::before { opacity: 1; }
+        .contact-item svg { width: 16px; height: 16px; fill: currentColor; }
+
+        .hero-slogan-block { text-align: right; display: flex; align-items: center; gap: 16px; z-index: 5; opacity: 0; }
+        .slogan-icon { font-weight: 800; font-size: 3rem; color: rgba(255,255,255,0.1); line-height: 1; font-style: italic; display: inline-block; transform: scaleX(-1); }
+        .slogan-text { font-size: 0.85rem; font-weight: 500; line-height: 1.4; letter-spacing: 1px; color: var(--c-text-muted); }
+        .slogan-text span { color: var(--c-primary); font-weight: 700;}
+
+        /* ================= 拍立得悬浮 ================= */
+        .polaroid-pos-container { position: absolute; bottom: 120%; right: 18%; z-index: 20; perspective: 1200px; }
+        .polaroid-anim-container { transform-style: preserve-3d; }
+        .polaroid-wrapper {
+            background: #fdfdfd; padding: 10px 10px 25px 10px;
+            box-shadow: 8px 15px 30px rgba(0,0,0,0.6), inset 0 0 2px rgba(255,255,255,0.5);
+            border: 1px solid #e0e0e0; border-radius: 2px; cursor: grab;
+            transition: box-shadow 0.5s ease, transform 0.5s ease;
+            opacity: 0; 
+        }
+        .polaroid-tape {
+            position: absolute; top: -12px; left: 50%; width: 90px; height: 28px; margin-left: -45px;
+            background: rgba(255, 255, 255, 0.4); backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1); z-index: 21;
+            border-left: 2px dashed rgba(255,255,255,0.3); border-right: 2px dashed rgba(255,255,255,0.3);
+            opacity: 0; 
+        }
+        .polaroid-wrapper:hover { box-shadow: 15px 30px 45px rgba(0,0,0,0.8), 0 0 35px var(--c-primary-glow); z-index: 30; }
+        .polaroid-wrapper:active { cursor: grabbing; transform: scale(0.98) !important; }
+
+        .polaroid-img { width: 140px; height: 160px; object-fit: cover; background-color: #222; filter: grayscale(10%) contrast(1.15); pointer-events: none; border-radius: 2px; }
+        .polaroid-text { font-family: "Impact", "Arial Black", sans-serif; color: #111; font-size: 1.2rem; text-align: center; margin-top: 12px; letter-spacing: 4px; font-style: italic; text-transform: uppercase; }
+        
+        /* ================= 核心组件 (玻璃拟态 Bento Box) ================= */
+        .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+        .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+        .grid-overview { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+        
+        .glow-box {
+            position: relative; --mouse-x: 50%; --mouse-y: 50%; --spotlight-opacity: 0; 
+            background: var(--c-surface); border: 1px solid var(--c-border); border-radius: var(--radius-lg); 
+            backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+            box-shadow: var(--c-shadow); transition: var(--transition-bounce);
+        }
+        .glow-box::after {
+            content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; border-radius: inherit;
+            background: radial-gradient(400px circle at var(--mouse-x) var(--mouse-y), rgba(0, 240, 255, 0.06) 0%, transparent 80%);
+            opacity: var(--spotlight-opacity); transition: opacity 0.4s ease; z-index: 1; pointer-events: none;
+        }
+        .edge-light {
+            position: absolute; top: -1px; left: -1px; right: -1px; bottom: -1px;
+            border-radius: inherit; pointer-events: none; z-index: 10; padding: 1px; 
+            background: radial-gradient(350px circle at var(--mouse-x) var(--mouse-y), #00F0FF 0%, #3B82F6 40%, transparent 80%);
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0); -webkit-mask-composite: xor;
+            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0); mask-composite: exclude;
+            opacity: var(--spotlight-opacity); transition: opacity 0.4s ease;
+        }
+        .glow-box-inner { position: relative; z-index: 2; height: 100%; padding: 32px; border-radius: inherit; display: flex; flex-direction: column; }
+        
+        .glow-box:not(.cert-item):hover { --spotlight-opacity: 1; transform: translateY(-4px) scale(1.01); box-shadow: var(--c-shadow-hover); border-color: rgba(255,255,255,0.15); }
+        
+        /* ================= 证书专属：3D 反光与黑白全彩特效 ================= */
+        .cert-item { 
+            display: flex; flex-direction: column; overflow: hidden; padding: 0 !important; cursor: pointer; text-decoration: none; 
+            transform-style: preserve-3d;
+            /* 性能优化：动态添加 will-change 而不是写死 */
+        }
+        .cert-item:hover { box-shadow: var(--c-shadow-hover); border-color: rgba(255,255,255,0.2); --spotlight-opacity: 1; will-change: transform; }
+        
+        .cert-glare-wrap {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%; overflow: hidden; 
+            border-radius: inherit; z-index: 10; pointer-events: none;
+        }
+        .cert-glare {
+            position: absolute; top: -50%; left: -50%; width: 200%; height: 200%;
+            background: radial-gradient(circle at center, rgba(255, 255, 255, 0.15) 0%, transparent 40%);
+            mix-blend-mode: overlay; opacity: 0; transition: opacity 0.3s ease;
+        }
+        .cert-item:hover .cert-glare { opacity: 1; }
+
+        .cert-img-wrap {
+            position: relative; width: 100%; height: 160px; overflow: hidden;
+            border-bottom: 1px solid rgba(255,255,255,0.05); z-index: 2; background: #000;
+        }
+        
+        .cert-img {
+            width: 100%; height: 100%; object-fit: cover; 
+            transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1), filter 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+            filter: grayscale(100%) brightness(0.5) contrast(1.2); 
+        }
+        .cert-img-overlay {
+            position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+            background: linear-gradient(to bottom, rgba(11, 17, 32, 0.1), rgba(11, 17, 32, 0.9));
+            transition: opacity 0.6s ease; z-index: 3; pointer-events: none;
+        }
+        
+        .cert-item:hover .cert-img { transform: scale(1.1); filter: grayscale(0%) brightness(1) contrast(1); }
+        .cert-item:hover .cert-img-overlay { opacity: 0.1; }
+        
+        .cert-content { padding: 24px; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between; z-index: 2; pointer-events: none;}
+
+        .cert-micro-item { padding: 16px 20px !important; display: flex; flex-direction: column; justify-content: center; cursor: default; }
+        .cert-micro-name { font-weight: 700; color: var(--c-primary); font-size: 0.9rem; margin-bottom: 6px; line-height: 1.3;}
+        .cert-micro-org { font-size: 0.75rem; color: var(--c-text-muted); text-transform: uppercase; letter-spacing: 1px; }
+        .cert-micro-item:hover { background: rgba(0, 240, 255, 0.05); border-color: rgba(0, 240, 255, 0.3); transform: translateY(-2px); box-shadow: var(--c-shadow-hover); }
+        
+        .badge { display: inline-block; padding: 6px 14px; margin: 0 8px 10px 0; background: rgba(255,255,255,0.03); color: var(--c-primary); font-size: 0.75rem; font-weight: 500; letter-spacing: 1px; border: 1px solid rgba(255,255,255,0.08); border-radius: var(--radius-full); }
+        .skill-group h3 { font-size: 1.25rem; margin-bottom: 16px; font-weight: 600; color: #ffffff; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 12px;}
+        .skill-desc { font-size: 0.95rem; color: var(--c-text-muted); margin-bottom: 24px; flex-grow: 1; line-height: 1.7;}
+        
+        .project-title { font-size: 1.4rem; font-weight: 600; color: #ffffff; margin-bottom: 8px; transition: color 0.3s ease; }
+        .glow-box:hover .project-title { color: var(--c-primary); }
+        .project-meta { font-size: 0.85rem; color: var(--c-primary); font-weight: 500; margin-bottom: 24px; opacity: 0.8;}
+        .project-desc { font-size: 0.95rem; color: var(--c-text-muted); line-height: 1.7;}
+        .project-desc li { position: relative; padding-left: 20px; margin-bottom: 12px; }
+        .project-desc li::before { content: "•"; position: absolute; left: 0; color: var(--c-primary); font-weight: bold; opacity: 0.7;}
+
+        .timeline { position: relative; padding-left: 28px; border-left: 1px solid rgba(255,255,255,0.1); }
+        .timeline-item { position: relative; margin-bottom: 40px; }
+        .timeline-item::before { content: ''; position: absolute; left: -34px; top: 4px; width: 12px; height: 12px; background: var(--c-primary); border-radius: 50%; box-shadow: 0 0 10px var(--c-primary); }
+        .edu-header { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; margin-bottom: 8px; }
+        .edu-school { font-size: 1.4rem; font-weight: 600; color: #ffffff;}
+        .edu-time { font-size: 0.9rem; font-weight: 500; color: var(--c-text-light); }
+
+        /* ================= 标签页 ================= */
+        .tabs-nav { display: flex; gap: 12px; margin-bottom: 32px; padding-bottom: 4px; overflow-x: auto; -ms-overflow-style: none; scrollbar-width: none; }
+        .tabs-nav::-webkit-scrollbar { display: none; }
+        .tab-btn { font-size: 0.9rem; font-weight: 500; letter-spacing: 1px; color: var(--c-text-light); white-space: nowrap; padding: 10px 24px; border: 1px solid rgba(255,255,255,0.05); background: rgba(255,255,255,0.02); border-radius: var(--radius-full); transition: var(--transition); }
+        .tab-btn:hover { color: #ffffff; background: rgba(255,255,255,0.05); }
+        .tab-btn[aria-selected="true"] { color: #000000; background: var(--c-primary); border-color: var(--c-primary); box-shadow: 0 0 20px var(--c-primary-glow);}
+        
+        .tab-panel { display: none; }
+        .tab-panel.active { display: block; }
+
+        .cert-name { font-weight: 600; color: #ffffff; margin-bottom: 8px; font-size: 1.1rem;}
+        .cert-org { color: var(--c-text-muted); font-size: 0.85rem; margin-bottom: 16px; line-height: 1.4; }
+        .cert-time { color: var(--c-primary); font-weight: 500; font-size: 0.85rem; white-space: nowrap; background: rgba(0, 240, 255, 0.08); padding: 6px 12px; border-radius: 8px; align-self: flex-start; border: 1px solid rgba(0,240,255,0.2);}
+
+        /* ================= 毛玻璃全屏画廊 Lightbox ================= */
+        .lightbox {
+            position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+            background: rgba(11, 17, 32, 0.85); backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px);
+            z-index: 10000; display: flex; justify-content: center; align-items: center;
+            opacity: 0; pointer-events: none; 
+        }
+        .lightbox.active { pointer-events: auto; }
+        .lightbox-close {
+            position: absolute; top: 40px; right: 40px; width: 48px; height: 48px;
+            background: rgba(255,255,255,0.1); border-radius: 50%; display: flex; justify-content: center; align-items: center;
+            color: #fff; border: 1px solid rgba(255,255,255,0.2); cursor: pointer; transition: all 0.3s;
+        }
+        .lightbox-close:hover { background: var(--c-primary); border-color: var(--c-primary); color: #000; transform: scale(1.1); box-shadow: 0 0 20px var(--c-primary-glow);}
+        .lightbox-content {
+            max-width: 90vw; max-height: 90vh; position: relative;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.6), 0 0 40px rgba(0, 240, 255, 0.2);
+            border-radius: 12px; overflow: hidden; border: 1px solid rgba(255,255,255,0.1);
+        }
+        #lightbox-img {
+            display: block; max-width: 100%; max-height: 90vh; object-fit: contain;
+        }
+
+        /* ================= 辅助动效 ================= */
+        #toast { position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%) translateY(100px); background: var(--c-primary); color: #000; padding: 12px 24px; font-weight: 600; border-radius: var(--radius-full); opacity: 0; transition: var(--transition-bounce); z-index: 2000; pointer-events: none; box-shadow: 0 10px 20px var(--c-primary-glow);}
+        #toast.show { transform: translateX(-50%) translateY(0); opacity: 1; }
+
+        #back-to-top { 
+            position: fixed; bottom: 40px; right: 40px; width: 50px; height: 50px; background: rgba(255,255,255,0.05); color: #ffffff; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 20px rgba(0,0,0,0.5); opacity: 0; transform: scale(0.8); pointer-events: none; z-index: 1000; border: 1px solid rgba(255,255,255,0.1); backdrop-filter: blur(12px); transition: var(--transition-bounce);
+        }
+        #back-to-top.show { opacity: 1; transform: scale(1); pointer-events: auto; }
+        #back-to-top:hover { color: #000; background: var(--c-primary); border-color: var(--c-primary); transform: translateY(-5px) scale(1.1); box-shadow: 0 15px 25px var(--c-primary-glow); }
+
+        /* ================= 响应式 ================= */
+        @media (max-width: 992px) {
+            .hero-bottom-grid { flex-direction: column; align-items: flex-start; gap: 40px; }
+            .hero-slogan-block { align-self: flex-start; text-align: left; }
+            .polaroid-pos-container { right: 5%; bottom: 100%; }
+            .grid-3 { grid-template-columns: repeat(2, 1fr); } 
+            .grid-overview { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 768px) {
+            .grid-2, .grid-3, .grid-overview { grid-template-columns: 1fr; } 
+            .nav-links { display: none; }
+            .hero-massive-title { font-size: 24vw; margin-top: 10vh; }
+            .container { padding: 0 24px; }
+            section { padding: 50px 0; }
+            .hero-bottom-grid { padding-left: 24px; padding-right: 24px; }
+            .polaroid-pos-container { position: relative; bottom: auto; right: auto; margin: 0 auto 40px auto; display: flex; justify-content: center; }
+            
+            .profile-inner-grid { grid-template-columns: 1fr !important; text-align: center; gap: 24px !important; padding: 24px !important; }
+            .gsap-profile-avatar-wrap { margin: 0 auto; }
+            .gsap-profile-text-wrap { display: flex; flex-direction: column; align-items: center; }
+            .gsap-profile-text-wrap .badge { margin: 0 4px 10px 4px; }
+            .lightbox-close { top: 20px; right: 20px; width: 40px; height: 40px; }
+            
+            .hero-center-desc { padding: 0 24px; padding-right: 24px; text-align: center; } 
+        }
+
+        @media print {
+            body { background: #fff !important; color: #000 !important; }
+            .no-print, .global-curtain, .navbar, #back-to-top, #toast, .hero-video-wrapper, #particle-title-container, .edge-light, .polaroid-pos-container, .lightbox { display: none !important; }
+            .hero { min-height: auto; padding-top: 0; padding-bottom: 20px; color: #000; border-bottom: none; }
+            .hero-massive-title .hidden-text { visibility: visible; }
+            .hero-massive-title { font-size: 40pt; margin: 0 0 20px 0; letter-spacing: 0; color: #000; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="global-curtain"></div>
+
+    <nav class="navbar no-print" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">JAY.</div>
+            <div class="nav-links">
+                <a href="#profile-card" class="active">Profile</a>
+                <a href="#skills">Skills</a>
+                <a href="#projects">Projects</a>
+                <a href="#certificates">Awards</a>
+            </div>
+            <div class="nav-actions">
+                <button class="icon-btn" onclick="window.print()" aria-label="打印简历" title="打印/导出PDF">
+                    <svg width="18" height="18" viewBox="0 0 24 24"><path d="M19 8H5V3h14v5zm0 2h2v9h-4v4H7v-4H3v-9h2c0-1.66 1.34-3 3-3h8c1.66 0 3 1.34 3 3zm-2 7H7v5h10v-5zm-2-5.5a1.5 1.5 0 1 0-3 0 1.5 1.5 0 0 0 3 0z"/></svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <div>
+        <header id="hero" class="hero">
+            <div class="hero-video-wrapper">
+                <!-- ！！性能优化：增加了 poster 视频占位图 ！！ -->
+                <video autoplay loop muted playsinline poster="./poster.jpg">
+                    <source src="./bg-video.mp4" type="video/mp4">
+                    您的浏览器不支持视频背景。
+                </video>
+                <div class="hero-video-overlay"></div>
+            </div>
+
+            <div class="hero-massive-title" id="particle-title-wrapper">
+                <span class="hidden-text">LINZIJIE</span>
+                <div class="scanner-line"></div>
+                <div id="particle-title-container"></div>
+            </div>
+            
+            <div class="hero-center-desc">
+                求职意向：通信AI算法实习。<br>
+                专注于大语言模型（LLM）应用、AIGC视觉创作与Agent智能体构建，具备从需求分析、模型微调到部署上线的完整全流程实战能力。
+            </div>
+
+            <div class="hero-bottom-grid">
+                <div class="polaroid-pos-container no-print">
+                    <div class="polaroid-anim-container">
+                        <div class="polaroid-wrapper" title="这不仅是简历，更是我的名片">
+                            <div class="polaroid-tape"></div>
+                            <img src="./avatar.jpg" alt="林子杰" class="polaroid-img">
+                            <div class="polaroid-text">JAY.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hero-stat-block">
+                    <div class="stat-slash">///</div>
+                    <div class="stat-number">AIGC+</div>
+                    <div class="stat-label">AI Application & Vision Systems</div>
+                    <div class="contact-bar" id="contact-container"></div>
+                </div>
+
+                <div class="hero-slogan-block">
+                    <div class="slogan-icon">Z</div>
+                    <div class="slogan-text">
+                        <span>CODE IS NOT</span><br>
+                        JUST LOGIC
+                    </div>
+                </div>
+            </div>
+        </header>
+        
+        <div class="container">
+            
+            <section id="profile-card" style="margin-top: 60px; padding-top: 0; border-top: none;">
+                <div class="glow-box" style="border-radius: 24px;">
+                    <div class="edge-light"></div>
+                    <div class="glow-box-inner profile-inner-grid" style="display: grid; grid-template-columns: auto 1fr; gap: 40px; align-items: center; padding: 40px;">
+                        
+                        <div class="gsap-profile-avatar-wrap" style="width: 150px; height: 150px; border-radius: 50%; overflow: hidden; background: #111; box-shadow: 0 10px 25px rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.1);">
+                            <img src="./avatar.jpg" alt="林子杰" class="gsap-profile-img" style="width: 100%; height: 100%; object-fit: cover;">
+                        </div>
+                        
+                        <div class="gsap-profile-text-wrap" style="min-width: 0;">
+                            <div class="gsap-profile-text" style="font-size: 0.8rem; font-weight: 600; color: var(--c-primary); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 8px;">Identity & Vision</div>
+                            <h2 class="gsap-profile-text" style="font-size: 2.2rem; font-weight: 700; margin-bottom: 12px; letter-spacing: 1px; color: #ffffff;">
+                                林子杰 <span style="font-size: 1rem; font-weight: 500; color: var(--c-text-muted); margin-left: 8px;">/ Jay Lin</span>
+                            </h2>
+                            <p class="gsap-profile-text" style="font-size: 1.05rem; line-height: 1.7; color: var(--c-text-muted); margin-bottom: 20px;">
+                                汕头大学通信工程专业本科生（2026级），极客精神与视觉审美的结合者。专注于 <strong>通信AI算法方向</strong>，深耕大模型应用落地、RAG系统、智能体（Agent）设计及前沿视觉创作。
+                            </p>
+                            <div class="gsap-profile-text" style="display: flex; gap: 10px; flex-wrap: wrap; justify-content: flex-start;">
+                                <span class="badge" style="background: rgba(0,240,255,0.1); border-color: rgba(0,240,255,0.3);">AI Application Dev</span>
+                                <span class="badge" style="background: rgba(0,240,255,0.1); border-color: rgba(0,240,255,0.3);">AIGC Vision Creator</span>
+                                <span class="badge" style="background: rgba(0,240,255,0.1); border-color: rgba(0,240,255,0.3);">LLM / Agent Architect</span>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </section>
+
+            <section id="skills">
+                <h2 class="section-title">Skills Matrix</h2>
+                <div class="grid-3" id="skills-container"></div>
+            </section>
+
+            <section id="projects">
+                <h2 class="section-title">Projects & Practice</h2>
+                <div class="tabs-nav no-print" role="tablist" id="projects-tab-nav"></div>
+                <div id="projects-tab-content"></div>
+            </section>
+
+            <section id="certificates">
+                <h2 class="section-title">Certifications</h2>
+                <div class="tabs-nav no-print" role="tablist" id="certs-tab-nav"></div>
+                <div id="certs-tab-content"></div>
+            </section>
+
+            <section id="education">
+                <h2 class="section-title">Education</h2>
+                <div class="timeline" id="education-container" style="border-left: none; padding-left: 60px;"></div>
+            </section>
+        </div>
+    </div>
+
+    <footer style="text-align: center; padding: 60px 40px; font-weight: 500; font-size: 0.85rem; text-transform: uppercase; border-top: 1px solid rgba(255,255,255,0.05); margin-top: 80px; letter-spacing: 2px; color: var(--c-text-muted);">
+        <p>&copy; <span id="current-year"></span> LINZIJIE. CRAFTED WITH AI & PASSION.</p>
+    </footer>
+
+    <div id="toast"></div>
+    <button id="back-to-top" aria-label="返回顶部">
+        <svg width="20" height="20" viewBox="0 0 24 24"><path d="M13 19V7.83l4.88 4.88c.39.39 1.03.39 1.42 0 .39-.39.39-1.02 0-1.41l-6.59-6.59a.996.996 0 0 0-1.41 0l-6.6 6.58c-.39.39-.39 1.02 0 1.41.39.39 1.02.39 1.41 0L11 7.83V19c0 .55.45 1 1 1s1-.45 1-1z"/></svg>
+    </button>
+
+    <div id="lightbox" class="lightbox no-print">
+        <button class="lightbox-close" aria-label="Close">
+            <svg width="24" height="24" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+        <div class="lightbox-content">
+            <img id="lightbox-img" src="" alt="Certificate High-Res">
+        </div>
+    </div>
+
+    <script>
+        const hexToRgb = hex => { const clean = hex.replace('#', '').trim(); if (!/^[0-9a-fA-F]{6}$/.test(clean)) return null; return { r: parseInt(clean.slice(0, 2), 16), g: parseInt(clean.slice(2, 4), 16), b: parseInt(clean.slice(4, 6), 16) }; };
+        const mixRgb = (from, to, amount) => ({ r: Math.round(from.r + (to.r - from.r) * amount), g: Math.round(from.g + (to.g - from.g) * amount), b: Math.round(from.b + (to.b - from.b) * amount) });
+        const rgbToCss = rgb => `rgb(${rgb.r}, ${rgb.g}, ${rgb.b})`;
+        const clamp = (value, min, max) => Math.min(Math.max(value, min), max);
+        const easeOutCubic = t => 1 - Math.pow(1 - t, 3);
+        const resolveFontSize = (value, container, fontWeight, fontFamily) => { if (typeof value === 'number') return value; const probe = document.createElement('span'); probe.textContent = 'M'; probe.style.position = 'absolute'; probe.style.visibility = 'hidden'; probe.style.pointerEvents = 'none'; probe.style.fontSize = value; probe.style.fontWeight = String(fontWeight); probe.style.fontFamily = fontFamily; container.appendChild(probe); const size = parseFloat(window.getComputedStyle(probe).fontSize) || 96; probe.remove(); return size; };
+        const waitForFonts = async font => { if (!('fonts' in document)) return; try { await document.fonts.load(font); } catch {} await document.fonts.ready; };
+
+        // ！！性能优化：WebGL 加入 IntersectionObserver 智能休眠机制 ！！
+        const initParticleText = (containerElement, config) => {
+            const {
+                text = 'LINZIJIE', particleSize = 3, density = 4, color = '#FF2A00', highlightColor = '#ffffff',
+                scatter = 180, gatherDuration = 1600, stagger = 420, pointerRepel = 60, repelRadius = 150,
+                idleDrift = 0.7, trigger = 'hover', fontSize = '19vw', fontWeight = 800, fontFamily = 'inherit', glow = false,
+                letterSpacing = '0.08em'
+            } = config;
+
+            const canvas = document.createElement('canvas');
+            canvas.style.width = '100%'; canvas.style.height = '100%';
+            containerElement.appendChild(canvas);
+            
+            const ctx = canvas.getContext('2d');
+            let particles = [], animationFrame = null, resizeFrame = null, buildId = 0, gathering = false, gatherStart = 0;
+            let width = 0, height = 0, dpr = 1;
+            let reducedMotion = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches ?? false;
+            let isRendering = true; // WebGL 休眠标识
+
+            const pointer = { active: false, x: 0, y: 0, smoothX: 0, smoothY: 0 };
+
+            const startGather = (fromScatter = true) => {
+                if (!particles.length) return;
+                const now = performance.now();
+                const spread = reducedMotion ? 0 : scatter;
+                particles.forEach(p => {
+                    if (fromScatter) {
+                        const angle = p.seed * Math.PI * 2;
+                        const distance = spread * (0.35 + p.depth * 0.75);
+                        p.x = p.targetX + Math.cos(angle) * distance + (p.depth - 0.5) * spread * 0.55;
+                        p.y = p.targetY + Math.sin(angle) * distance + (p.seed - 0.5) * spread * 0.55;
+                    }
+                    p.startX = p.x; p.startY = p.y;
+                    p.delay = reducedMotion ? 0 : p.seed * stagger;
+                });
+                gatherStart = now; gathering = true;
+            };
+
+            const drawParticle = p => {
+                ctx.fillStyle = p.color;
+                if (p.size <= 2.1) { ctx.fillRect(p.x - p.size / 2, p.y - p.size / 2, p.size, p.size); return; }
+                ctx.beginPath(); ctx.arc(p.x, p.y, p.size / 2, 0, Math.PI * 2); ctx.fill();
+            };
+
+            const render = now => {
+                if (!isRendering) return; // 不在视口则暂停计算
+
+                ctx.clearRect(0, 0, width, height);
+                if (glow && !reducedMotion) { ctx.shadowBlur = particleSize * 3; ctx.shadowColor = highlightColor; } else { ctx.shadowBlur = 0; }
+                
+                pointer.smoothX += (pointer.x - pointer.smoothX) * 0.18;
+                pointer.smoothY += (pointer.y - pointer.smoothY) * 0.18;
+                let complete = true;
+
+                particles.forEach(p => {
+                    let baseX = p.targetX, baseY = p.targetY, progress = 1;
+
+                    if (gathering) {
+                        const local = (now - gatherStart - p.delay) / Math.max(1, reducedMotion ? 1 : gatherDuration);
+                        progress = clamp(local, 0, 1);
+                        const eased = easeOutCubic(progress);
+                        baseX = p.startX + (p.targetX - p.startX) * eased;
+                        baseY = p.startY + (p.targetY - p.startY) * eased;
+                        if (progress < 1) complete = false;
+                    } else if (!reducedMotion && idleDrift > 0) {
+                        const driftTime = now * 0.001;
+                        baseX += Math.sin(driftTime * 0.9 + p.seed * 10) * idleDrift * p.depth;
+                        baseY += Math.cos(driftTime * 0.75 + p.depth * 10) * idleDrift * p.depth;
+                    }
+
+                    if (pointer.active && !reducedMotion && pointerRepel > 0 && repelRadius > 0) {
+                        const dx = baseX - pointer.smoothX, dy = baseY - pointer.smoothY;
+                        const distance = Math.hypot(dx, dy);
+                        if (distance > 0 && distance < repelRadius) {
+                            const force = Math.pow(1 - distance / repelRadius, 2) * pointerRepel;
+                            baseX += (dx / distance) * force; baseY += (dy / distance) * force;
+                        }
+                    }
+
+                    const follow = reducedMotion ? 1 : 0.22;
+                    p.x += (baseX - p.x) * follow; p.y += (baseY - p.y) * follow;
+                    ctx.globalAlpha = clamp(0.35 + progress * 0.65, 0, 1);
+                    drawParticle(p);
+                });
+
+                ctx.globalAlpha = 1; ctx.shadowBlur = 0;
+                if (gathering && complete) gathering = false;
+                
+                animationFrame = window.requestAnimationFrame(render);
+            };
+
+            const sampleText = async () => {
+                const currentBuild = ++buildId;
+                const rect = containerElement.getBoundingClientRect();
+                width = Math.floor(rect.width); height = Math.floor(rect.height);
+                if (width <= 0 || height <= 0) return;
+
+                dpr = Math.min(window.devicePixelRatio || 1, 2);
+                canvas.width = Math.max(1, Math.floor(width * dpr));
+                canvas.height = Math.max(1, Math.floor(height * dpr));
+                ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+
+                const computed = window.getComputedStyle(containerElement);
+                const resolvedFamily = fontFamily === 'inherit' ? computed.fontFamily || 'sans-serif' : fontFamily;
+                let resolvedSize = resolveFontSize(fontSize, containerElement, fontWeight, resolvedFamily);
+                let font = `${fontWeight} ${resolvedSize}px ${resolvedFamily}`;
+
+                await waitForFonts(font);
+                if (currentBuild !== buildId) return;
+
+                const offscreen = document.createElement('canvas');
+                const offCtx = offscreen.getContext('2d', { willReadFrequently: true });
+                if (!offCtx) return;
+
+                const content = String(text || ' ');
+                const maxTextWidth = width * 0.92;
+                
+                offCtx.font = font;
+                if ('letterSpacing' in offCtx) offCtx.letterSpacing = letterSpacing;
+                
+                let metrics = offCtx.measureText(content);
+                const measuredWidth = Math.max(1, metrics.width);
+                if (measuredWidth > maxTextWidth) {
+                    resolvedSize = Math.max(18, resolvedSize * (maxTextWidth / measuredWidth));
+                    font = `${fontWeight} ${resolvedSize}px ${resolvedFamily}`;
+                    await waitForFonts(font);
+                    if (currentBuild !== buildId) return;
+                    offCtx.font = font; 
+                    if ('letterSpacing' in offCtx) offCtx.letterSpacing = letterSpacing;
+                    metrics = offCtx.measureText(content);
+                }
+
+                const left = Math.ceil(metrics.actualBoundingBoxLeft || 0);
+                const right = Math.ceil(metrics.actualBoundingBoxRight || metrics.width);
+                const ascent = Math.ceil(metrics.actualBoundingBoxAscent || resolvedSize * 0.78);
+                const descent = Math.ceil(metrics.actualBoundingBoxDescent || resolvedSize * 0.22);
+                const padding = Math.max(12, Math.ceil(resolvedSize * 0.08));
+                const textWidth = Math.max(1, left + right); const textHeight = Math.max(1, ascent + descent);
+
+                offscreen.width = textWidth + padding * 2; offscreen.height = textHeight + padding * 2;
+                offCtx.font = font; 
+                if ('letterSpacing' in offCtx) offCtx.letterSpacing = letterSpacing;
+                offCtx.textAlign = 'left'; offCtx.textBaseline = 'alphabetic'; offCtx.fillStyle = '#ffffff';
+                offCtx.fillText(content, padding - left, padding + ascent);
+
+                const imageData = offCtx.getImageData(0, 0, offscreen.width, offscreen.height);
+                const targets = []; const step = Math.max(2, Math.floor(density));
+
+                for (let y = 0; y < offscreen.height; y += step) {
+                    for (let x = 0; x < offscreen.width; x += step) {
+                        const alpha = imageData.data[(y * offscreen.width + x) * 4 + 3];
+                        if (alpha > 40) targets.push({ x: width / 2 - offscreen.width / 2 + x, y: height / 2 - offscreen.height / 2 + y, alpha: alpha / 255 });
+                    }
+                }
+
+                const maxParticles = Math.max(1500, Math.min(8000, Math.floor((width * height) / 50)));
+                const stride = Math.max(1, Math.ceil(targets.length / maxParticles));
+                const baseRgb = hexToRgb(color); const highlightRgb = hexToRgb(highlightColor);
+                const selected = targets.filter((_, idx) => idx % stride === 0);
+
+                particles = selected.map((target, idx) => {
+                    const seed = ((idx * 9301 + 49297) % 233280) / 233280;
+                    const depth = 0.45 + (((idx * 233 + 97) % 1000) / 1000) * 0.9;
+                    const blend = baseRgb && highlightRgb ? clamp(target.x / Math.max(1, width) + (seed - 0.5) * 0.35, 0, 1) : 0;
+                    const pColor = baseRgb && highlightRgb ? rgbToCss(mixRgb(baseRgb, highlightRgb, blend)) : color;
+                    const angle = seed * Math.PI * 2;
+                    const distance = (reducedMotion ? 0 : scatter) * (0.35 + depth * 0.75);
+                    const startX = target.x + Math.cos(angle) * distance + (seed - 0.5) * scatter * 0.45;
+                    const startY = target.y + Math.sin(angle) * distance + (depth - 0.9) * scatter * 0.45;
+
+                    return { x: reducedMotion ? target.x : startX, y: reducedMotion ? target.y : startY, startX, startY, targetX: target.x, targetY: target.y, size: Math.max(0.6, particleSize * (0.75 + target.alpha * 0.45)), color: pColor, seed, depth, delay: seed * stagger };
+                });
+
+                pointer.x = width / 2; pointer.y = height / 2; pointer.smoothX = pointer.x; pointer.smoothY = pointer.y;
+
+                if (reducedMotion) { particles.forEach(p => { p.x = p.targetX; p.y = p.targetY; p.startX = p.targetX; p.startY = p.targetY; p.delay = 0; }); gathering = false; } 
+                else { startGather(false); }
+
+                if (animationFrame === null) animationFrame = window.requestAnimationFrame(render);
+            };
+
+            // ！！性能优化：WebGL 交叉观察器，离开屏幕立即停止计算 ！！
+            const io = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        if (!isRendering) {
+                            isRendering = true;
+                            render(performance.now());
+                        }
+                    } else {
+                        isRendering = false;
+                        if (animationFrame) cancelAnimationFrame(animationFrame);
+                    }
+                });
+            });
+            io.observe(containerElement);
+
+            const queueSample = () => { if (resizeFrame) window.cancelAnimationFrame(resizeFrame); resizeFrame = window.requestAnimationFrame(sampleText); };
+            const handlePointerMove = e => { const rect = canvas.getBoundingClientRect(); pointer.x = e.clientX - rect.left; pointer.y = e.clientY - rect.top; pointer.active = true; };
+            const handlePointerLeave = () => { pointer.active = false; };
+            const handlePointerEnter = e => { handlePointerMove(e); if (trigger === 'hover') startGather(true); };
+            const handleClick = () => { if (trigger === 'click') startGather(true); };
+
+            canvas.addEventListener('pointerenter', handlePointerEnter); canvas.addEventListener('pointermove', handlePointerMove);
+            canvas.addEventListener('pointerleave', handlePointerLeave); canvas.addEventListener('click', handleClick);
+            const ro = new ResizeObserver(queueSample); ro.observe(containerElement);
+            sampleText();
+        };
+
+        const initBorderGlow = () => {
+            const glowBoxes = document.querySelectorAll('.glow-box');
+            glowBoxes.forEach(card => {
+                card.addEventListener('pointermove', (e) => {
+                    const rect = card.getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
+                    card.style.setProperty('--mouse-x', `${x}px`);
+                    card.style.setProperty('--mouse-y', `${y}px`);
+                });
+            });
+        };
+
+        const resume = {
+            basics: {
+                contacts: [
+                    { type: 'phone', value: '13825151120', icon: '<path d="M20 15.5c-1.25 0-2.45-.2-3.57-.57a1.02 1.02 0 0 0-1.02.24l-2.2 2.2a15.045 15.045 0 0 1-6.59-6.59l2.2-2.21a.96.96 0 0 0 .25-1A11.36 11.36 0 0 1 8.5 4c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1 0 9.39 7.61 17 17 17 .55 0 1-.45 1-1v-3.5c0-.55-.45-1-1-1zM19 12h2a9 9 0 0 0-9-9v2c3.87 0 7 3.13 7 7zm-4 0h2c0-2.76-2.24-5-5-5v2c1.66 0 3 1.34 3 3z"/>' },
+                    { type: 'email', value: ['lin071120', 'qq.com'], display: 'lin071120@qq.com', action: 'copy', icon: '<path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>' },
+                    { type: 'wechat', value: 'Jack-lin071120', action: 'copy', icon: '<path d="M8.2 12.1c-.4 0-.7-.2-.7-.5 0-.3.3-.5.7-.5.4 0 .7.2.7.5 0 .3-.3.5-.7.5zm5.7 0c-.4 0-.7-.2-.7-.5 0-.3.3-.5.7-.5.4 0 .7.2.7.5 0 .3-.3.5-.7.5zm7.1-1.3c0-2.8-2.7-5-6-5-3.3 0-6 2.2-6 5 0 2.8 2.7 5 6 5 1 0 1.9-.2 2.7-.6l2.3 1.1-.6-2.1c1-1 1.6-2.1 1.6-3.4zm-14.8-1c0-3.3 3.2-5.9 7.1-5.9 3.9 0 7.1 2.6 7.1 5.9 0 .4 0 .9-.2 1.3-1.1-1.4-2.8-2.3-4.8-2.3-3.9 0-7.1 2.6-7.1 5.9 0 1.2.4 2.3 1.1 3.2-.5 1.5-.7 1.8-.7 1.8l1.7-.8c.7.3 1.5.4 2.2.4 0 .1 0 .2 0 .2 0 3.3-3.2 5.9-7.1 5.9S1 18.2 1 14.9c0-1.7.9-3.2 2.3-4.4l-.8-2.6 3 1.5c1.1-.5 2.3-.7 3.6-.7-.1-.4-.2-.8-.2-1.2z"/>' },
+                    { type: 'github', value: 'Pekka-archer', link: 'https://github.com/Pekka-archer', icon: '<path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0 1 12 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.161 22 16.418 22 12c0-5.523-4.477-10-10-10z"/>'}
+                ]
+            },
+            education: [ { school: "汕头大学", major: "通信工程专业", degree: "本科", time: "2026.09 - 2030.06 (预期)", courses: "信号与系统、通信原理、数据结构与算法、人工智能导论", gpa: "待补，入学后更新" } ],
+            skills: [
+                { category: "AI应用与Agent", desc: "熟练掌握大模型应用全流程：Prompt工程、RAG系统构建、Fine-tuning及Agent开发。", tags: ["LangChain", "Spring AI", "Function Calling", "RAG", "Dify"] },
+                { category: "AIGC与视觉创作", desc: "精通AI视觉创作全流程设计，擅长使用ControlNet精准控制构图、结合LoRA进行风格微调。", tags: ["Stable Diffusion", "PAI ArtLab", "ControlNet", "LoRA", "ComfyUI"] },
+                { category: "大模型微调部署", desc: "采用LoRA高效参数微调方法，对LLaMA等开源模型进行指令微调，降低硬件依赖并提升质量。", tags: ["ModelScope", "PyTorch", "讯飞星辰", "Qwen", "PEFT", "vLLM"] },
+                { category: "编程与数据工程", desc: "Python基础扎实，熟练使用Pandas/NumPy清洗数据。熟练使用AI编码工具提效。", tags: ["Python", "Pandas/NumPy", "Git", "AI Coding", "Docker", "Linux"] },
+                { category: "计算机视觉(CV)", desc: "具备端到端的目标检测系统实战经验，涵盖数据增强、超参调优、模型训练与推理部署优化。", tags: ["YOLOv8", "OpenCV", "昇腾AI云服务", "MindSpore", "目标检测"] },
+                { category: "AI效能工具与研发框架", desc: "深度运用通义灵码、豆包MarsCode等AI辅助编码工具，结合Spring AI、华为CodeArts等开发框架，实现全链路研发提效。", tags: ["Cursor", "Spring AI", "MarsCode", "通义灵码", "CodeArts"] }
+            ],
+            projects: {
+                "LLM与智能体": [
+                    { name: "AI Agent智能体应用开发", meta: "蚂蚁百宝箱Agent平台、ModelScope、Function Calling", desc: ["实现从用户意图理解到任务自动拆解执行的完整链路，涵盖规划、工具使用和反思。","完成多轮对话状态管理与记忆机制设计，提升Agent连贯性。"] },
+                    { name: "基于RAG的智能问答系统开发", meta: "阿里云百炼平台、LangChain、通义千问、向量数据库", desc: ["采用RAG架构解决大模型垂直领域幻觉问题，实现文档自动化索引。","设计混合检索策略，问答准确率提升约30%；优化Prompt，回答质量提升约40%。"] }
+                ],
+                "AIGC与视觉": [
+                    { name: "基于AIGC的视觉艺术创作实践", meta: "阿里云PAI ArtLab、华为云VISION、Stable Diffusion", desc: ["完成20+组风格化视觉作品，通过ControlNet实现精确构图与姿态控制。","针对特定风格进行LoRA微调，训练效率提升25%。","完成企业专属海报实战，产出适配企业的标准化视觉模板。"] }
+                ],
+                "模型微调与CV": [
+                    { name: "大语言模型微调与部署实践", meta: "讯飞星辰平台、ModelScope、PyTorch、LoRA", desc: ["完成LLaMA、Qwen等模型微调，参数量减少90%以上。","垂直场景指令微调ROUGE评分提升约15%。"] },
+                    { name: "基于昇腾AI的YOLOv8目标检测系统", meta: "华为云昇腾AI云服务、YOLOv8", desc: ["数据集超10,000张标注图像，涵盖20+目标类别。","模型mAP达到87.5%，推理速度达实时要求(30+ FPS)。"] }
+                ]
+            },
+            certificates: {
+                "大模型与微调": [
+                    { name: "LLM Engineer (大语言模型)", org: "Datawhale × 趋动云", time: "2026.08", image: "./certs/llm-engineer.jpg" },
+                    { name: "大模型开发工程师", org: "Datawhale × 浪潮信息", time: "2026.08", image: "./certs/llm-dev.jpg" },
+                    { name: "Fine-tuning Engineer", org: "Datawhale × 科大讯飞", time: "2026.08", image: "./certs/finetune-dw.jpg" },
+                    { name: "微调工程师认证", org: "科大讯飞AI大学堂", time: "2026.08", image: "./certs/finetune-ifly.jpg" }
+                ],
+                "Agent与RAG": [
+                    { name: "Agent Engineer", org: "Datawhale × 蚂蚁集团", time: "2026.08", image: "./certs/agent-ant.jpg" },
+                    { name: "Agent Engineer", org: "Datawhale × ModelScope", time: "2026.08", image: "./certs/agent-modelscope.jpg" },
+                    { name: "智能体工程师认证", org: "科大讯飞AI大学堂", time: "2026.08", image: "./certs/agent-ifly.jpg" },
+                    { name: "RAG工程师认证", org: "科大讯飞AI大学堂", time: "2026.08", image: "./certs/rag-ifly.jpg" },
+                    { name: "RAG应用构建及优化", org: "阿里云Apsara Clouder", time: "2026.07", image: "./certs/rag-aliyun.jpg" },
+                    { name: "基于百炼平台构建智能体应用", org: "阿里云Apsara Clouder", time: "2026.07", image: "./certs/agent-aliyun.jpg" }
+                ],
+                "Prompt与工程基础": [
+                    { name: "Prompt Engineer", org: "Datawhale × 讯飞星火", time: "2026.08", image: "./certs/prompt-dw.jpg" },
+                    { name: "Prompt工程师认证", org: "科大讯飞AI大学堂", time: "2026.08", image: "./certs/prompt-ifly.jpg" },
+                    { name: "大模型的咒语-Prompt工程", org: "华为云微认证", time: "2026.08", image: "./certs/prompt-huawei.jpg" },
+                    { name: "Python基础能力认证", org: "北京科学智能研究院", time: "2026.08", image: "./certs/python-ai4s.jpg" },
+                    { name: "AI+编程能力认证", org: "Datawhale × 豆包MarsCode", time: "2026.08", image: "./certs/ai-coding.jpg" },
+                    { name: "AI+数据分析能力认证", org: "Datawhale × 商汤", time: "2026.08", image: "./certs/ai-analysis.jpg" }
+                ],
+                "CV视觉与内容生成": [
+                    { name: "基于PAI ArtLab的AIGC设计基础", org: "阿里云Apsara Clouder", time: "2026.07", image: "./certs/aigc-artlab.jpg" },
+                    { name: "VISION人工智能设计（进阶）", org: "阿里云Apsara Clouder", time: "2026.07", image: "./certs/vision-adv.jpg" },
+                    { name: "VISION人工智能设计（入门）", org: "阿里云Apsara Clouder", time: "2026.07", image: "./certs/vision-basic.jpg" },
+                    { name: "AI打造专属企业风格海报", org: "华为云微认证", time: "2026.08", image: "./certs/ai-poster.jpg" },
+                    { name: "利用大模型提升内容生产能力", org: "阿里云Apsara Clouder", time: "2026.07", image: "./certs/content-gen.jpg" }
+                ],
+                "AI平台架构与研发": [
+                    { name: "基于昇腾云服务训练YOLOv8模型", org: "华为云微认证", time: "2026.08", image: "./certs/yolo-huawei.jpg" },
+                    { name: "基于AIAgent实现人机AI扑克对战", org: "华为云微认证", time: "2026.08", image: "./certs/poker-agent.jpg" },
+                    { name: "华为云码道鸿蒙应用开发实战", org: "华为云微认证", time: "2026.08", image: "./certs/harmony-os.jpg" },
+                    { name: "Spring AI应用开发（入门）", org: "阿里云Apsara Clouder", time: "2026.07", image: "./certs/spring-ai.jpg" },
+                    { name: "基于通义灵码实现高效AI编码实践", org: "阿里云Apsara Clouder", time: "2026.07", image: "./certs/lingma.jpg" },
+                    { name: "人工智能训练师（高级）", org: "阿里巴巴橙点同学", time: "2026.08", image: "./certs/ai-trainer-adv.jpg" },
+                    { name: "人工智能训练师（初级）", org: "阿里巴巴橙点同学", time: "2026.08", image: "./certs/ai-trainer-basic.jpg" }
+                ]
+            }
+        };
+
+        const showToast = (msg) => {
+            const t = document.getElementById('toast');
+            t.textContent = msg; t.classList.add('show');
+            setTimeout(() => t.classList.remove('show'), 2000);
+        };
+
+        const renderContacts = () => {
+            const container = document.getElementById('contact-container');
+            container.innerHTML = resume.basics.contacts.map(c => {
+                if (c.action === 'copy' && c.type === 'email') {
+                    return `<button class="contact-item" onclick="copyToClipboard('${c.value.join('@')}', 'EMAIL COPIED')" title="复制邮箱"><svg viewBox="0 0 24 24">${c.icon}</svg> ${c.display}</button>`;
+                } else if (c.link) {
+                    return `<a href="${c.link}" target="_blank" class="contact-item"><svg viewBox="0 0 24 24">${c.icon}</svg> ${c.type}</a>`;
+                } else {
+                    return `<button class="contact-item" onclick="copyToClipboard('${c.value}', '${c.type === 'wechat' ? '微信号' : '联系方式'}已复制')" title="点击复制${c.type === 'wechat' ? '微信号' : ''}"><svg viewBox="0 0 24 24">${c.icon}</svg> ${c.type === 'wechat' ? 'WECHAT' : 'CALL ME'}</button>`;
+                }
+            }).join('');
+        };
+
+        window.copyToClipboard = (text, msg) => {
+            navigator.clipboard.writeText(text).then(() => showToast(msg)).catch(() => showToast("FAILED"));
+        };
+
+        const renderSkills = () => {
+            document.getElementById('skills-container').innerHTML = resume.skills.map(s => `
+                <div class="glow-box skill-group">
+                    <div class="edge-light"></div>
+                    <div class="glow-box-inner">
+                        <h3>${s.category}</h3>
+                        <p class="skill-desc">${s.desc}</p>
+                        <div class="skill-tags">${s.tags.map(t => `<span class="badge">${t}</span>`).join('')}</div>
+                    </div>
+                </div>
+            `).join('');
+        };
+
+        const renderEducation = () => {
+            const eduHtml = resume.education.map(e => `
+                <div class="timeline-item" style="padding-left:32px; position:relative;">
+                    <div class="timeline-node" style="position:absolute; left:-5px; top:8px; width:12px; height:12px; border-radius:50%; background:var(--c-primary); box-shadow:0 0 10px var(--c-primary); transform:scale(0);"></div>
+                    <div class="timeline-content" style="opacity:0; transform:translateX(30px);">
+                        <div class="edu-header">
+                            <span class="edu-school">${e.school}</span>
+                            <span class="edu-time">${e.time}</span>
+                        </div>
+                        <div style="font-weight: 700; margin-bottom: 8px; color: #ffffff;">${e.major} | ${e.degree}</div>
+                        <p style="color: var(--c-text-muted);">核心课程：${e.courses}<br>GPA：${e.gpa}</p>
+                    </div>
+                </div>
+            `).join('');
+            
+            document.getElementById('education-container').innerHTML = `
+                <div class="timeline-line-bg" style="position: absolute; left: 28px; top: 0; bottom: 0; width: 1px; background: rgba(255,255,255,0.1);"></div>
+                <div class="timeline-line-active" style="position: absolute; left: 28px; top: 0; bottom: 0; width: 2px; background: var(--c-primary); transform-origin: top; transform: scaleY(0);"></div>
+                ${eduHtml}
+            `;
+        };
+
+        const buildTabs = (dataObj, navId, contentId, renderItemFn, layoutClass) => {
+            const nav = document.getElementById(navId);
+            const content = document.getElementById(contentId);
+            const keys = Object.keys(dataObj);
+            
+            nav.innerHTML = keys.map((k, i) => `<button class="tab-btn" role="tab" aria-selected="${i===0}" aria-controls="${contentId}-panel-${i}" id="${contentId}-tab-${i}">${k}</button>`).join('');
+            content.innerHTML = keys.map((k, i) => `<div class="tab-panel ${i===0?'active':''} ${layoutClass}" role="tabpanel" id="${contentId}-panel-${i}" data-title="${k}">${dataObj[k].map(renderItemFn).join('')}</div>`).join('');
+
+            const btns = nav.querySelectorAll('.tab-btn');
+            const panels = content.querySelectorAll('.tab-panel');
+            
+            const switchTab = (index) => {
+                btns.forEach(b => b.setAttribute('aria-selected', 'false'));
+                panels.forEach(p => p.classList.remove('active'));
+                btns[index].setAttribute('aria-selected', 'true');
+                panels[index].classList.add('active');
+                
+                const newCards = panels[index].querySelectorAll('.glow-box');
+                gsap.fromTo(newCards, 
+                    { rotateX: 90, opacity: 0, transformOrigin: "bottom center" },
+                    { rotateX: 0, opacity: 1, duration: 1.2, ease: "expo.out", stagger: 0.08 }
+                );
+            };
+            btns.forEach((btn, idx) => btn.addEventListener('click', () => switchTab(idx)));
+            initBorderGlow(); 
+        };
+
+        const renderProjectItem = (p) => `
+            <div class="glow-box">
+                <div class="edge-light"></div>
+                <div class="glow-box-inner">
+                    <h3 class="project-title">${p.name}</h3>
+                    <p class="project-meta">${p.meta}</p>
+                    <ul class="project-desc">${p.desc.map(d => `<li>${d}</li>`).join('')}</ul>
+                </div>
+            </div>`;
+
+        // ！！性能优化：为图片增加 loading="lazy" 属性 ！！
+        const renderCertItem = (c) => `
+            <a href="#" class="cert-item glow-box cert-trigger" data-img="${c.image || './avatar.jpg'}">
+                <div class="edge-light"></div>
+                <div class="cert-glare-wrap"><div class="cert-glare"></div></div>
+                <div class="cert-img-wrap">
+                    <img src="${c.image || './avatar.jpg'}" alt="${c.name}" class="cert-img" loading="lazy" onerror="this.src='./avatar.jpg'">
+                    <div class="cert-img-overlay"></div>
+                </div>
+                <div class="cert-content">
+                    <div>
+                        <div class="cert-name">${c.name}</div>
+                        <div class="cert-org">${c.org}</div>
+                    </div>
+                    <div class="cert-time">${c.time}</div>
+                </div>
+            </a>`;
+            
+        const renderMicroCertItem = (c) => `
+            <div class="glow-box cert-micro-item">
+                <div class="edge-light"></div>
+                <div class="cert-micro-name">${c.name}</div>
+                <div class="cert-micro-org">${c.org}</div>
+            </div>`;
+
+        // ！！性能优化：修复卡顿，缓存 getBoundingClientRect() ！！
+        const init3DTilt = () => {
+            const cards = document.querySelectorAll('.cert-item');
+            cards.forEach(card => {
+                const glare = card.querySelector('.cert-glare');
+                let rect = null; // 缓存坐标
+                
+                const handleMouseEnter = () => {
+                    rect = card.getBoundingClientRect(); // 仅在移入时读取一次
+                    gsap.to(card, { y: -5, scale: 1.02, duration: 0.3, ease: "power2.out" });
+                };
+
+                const handleMouseMove = (e) => {
+                    if (!rect) return;
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
+                    const centerX = rect.width / 2;
+                    const centerY = rect.height / 2;
+                    const rotateX = ((y - centerY) / centerY) * -8; 
+                    const rotateY = ((x - centerX) / centerX) * 8;
+                    
+                    gsap.to(card, { rotateX, rotateY, transformPerspective: 1000, duration: 0.4, ease: "power2.out" });
+                    
+                    if (glare) {
+                        gsap.to(glare, { x: x - rect.width/2, y: y - rect.height/2, duration: 0.4, ease: "power2.out" });
+                    }
+                };
+                
+                const handleMouseLeave = () => {
+                    rect = null; // 清除缓存
+                    gsap.to(card, { y: 0, scale: 1, rotateX: 0, rotateY: 0, duration: 0.8, ease: "elastic.out(1, 0.4)" });
+                    if(glare) gsap.to(glare, { x: 0, y: 0, duration: 0.8 });
+                };
+
+                card.addEventListener('mousemove', handleMouseMove);
+                card.addEventListener('mouseenter', handleMouseEnter);
+                card.addEventListener('mouseleave', handleMouseLeave);
+            });
+        };
+
+        const buildCertTabs = () => {
+            const nav = document.getElementById('certs-tab-nav');
+            const content = document.getElementById('certs-tab-content');
+            
+            const categoryKeys = Object.keys(resume.certificates);
+            const allKeys = ["全部总览", ...categoryKeys];
+            
+            let allCerts = [];
+            categoryKeys.forEach(k => { allCerts = allCerts.concat(resume.certificates[k]); });
+            
+            nav.innerHTML = allKeys.map((k, i) => `<button class="tab-btn" role="tab" aria-selected="${i===0}" aria-controls="certs-tab-content-panel-${i}" id="certs-tab-content-tab-${i}">${k}</button>`).join('');
+            
+            let panelsHtml = "";
+            allKeys.forEach((k, i) => {
+                if (i === 0) {
+                    panelsHtml += `<div class="tab-panel active grid-overview" role="tabpanel" id="certs-tab-content-panel-0">${allCerts.map(renderMicroCertItem).join('')}</div>`;
+                } else {
+                    panelsHtml += `<div class="tab-panel grid-3" role="tabpanel" id="certs-tab-content-panel-${i}">${resume.certificates[k].map(renderCertItem).join('')}</div>`;
+                }
+            });
+            content.innerHTML = panelsHtml;
+
+            const btns = nav.querySelectorAll('.tab-btn');
+            const panels = content.querySelectorAll('.tab-panel');
+            
+            init3DTilt();
+            
+            const switchTab = (index) => {
+                btns.forEach(b => b.setAttribute('aria-selected', 'false'));
+                panels.forEach(p => p.classList.remove('active'));
+                btns[index].setAttribute('aria-selected', 'true');
+                panels[index].classList.add('active');
+                
+                const newCards = panels[index].querySelectorAll('.glow-box');
+                gsap.fromTo(newCards, 
+                    { rotateX: 90, opacity: 0, transformOrigin: "bottom center" },
+                    { rotateX: 0, opacity: 1, duration: 1.2, ease: "expo.out", stagger: 0.02 }
+                );
+            };
+            btns.forEach((btn, idx) => btn.addEventListener('click', () => switchTab(idx)));
+            initBorderGlow(); 
+        };
+
+        const splitTextIntoSpans = (element) => {
+            const text = element.innerText;
+            element.innerHTML = '';
+            text.split(' ').forEach(word => {
+                const wordSpan = document.createElement('span');
+                wordSpan.className = 'split-word-wrap';
+                const innerSpan = document.createElement('span');
+                innerSpan.className = 'split-word';
+                innerSpan.innerText = word;
+                wordSpan.appendChild(innerSpan);
+                element.appendChild(wordSpan);
+                element.innerHTML += ' '; 
+            });
+        };
+
+        const initScrollAnimations = () => {
+            gsap.registerPlugin(ScrollTrigger);
+
+            document.querySelectorAll('.section-title').forEach(title => {
+                splitTextIntoSpans(title);
+                gsap.from(title.querySelectorAll('.split-word'), {
+                    scrollTrigger: { trigger: title, start: "top 85%" },
+                    y: "110%", duration: 1.2, ease: "power4.out", stagger: 0.05
+                });
+            });
+
+            const profileCard = document.querySelector('#profile-card .glow-box');
+            const profileAvatarWrap = profileCard.querySelector('.gsap-profile-avatar-wrap');
+            const profileImg = profileCard.querySelector('.gsap-profile-img');
+            const profileTexts = profileCard.querySelectorAll('.gsap-profile-text-wrap .gsap-profile-text, .gsap-profile-text-wrap h2, .gsap-profile-text-wrap p, .gsap-profile-text-wrap div');
+
+            gsap.set(profileAvatarWrap, { clipPath: "inset(100% 0 0 0)" });
+            gsap.set(profileImg, { scale: 1.4 });
+            gsap.set(profileTexts, { opacity: 0, y: 30 });
+
+            ScrollTrigger.create({
+                trigger: "#profile-card", start: "top 80%",
+                onEnter: () => {
+                    const tl = gsap.timeline();
+                    tl.to(profileAvatarWrap, { clipPath: "inset(0% 0 0 0)", duration: 1.5, ease: "power4.inOut" })
+                      .to(profileImg, { scale: 1, duration: 1.5, ease: "power4.out" }, "<0.2")
+                      .to(profileTexts, { opacity: 1, y: 0, duration: 1.2, ease: "power4.out", stagger: 0.1 }, "<0.2");
+                }
+            });
+
+            gsap.set('.skill-group', { clipPath: "inset(40% 40% 40% 40% round 20px)" });
+            gsap.set('.skill-group .glow-box-inner', { opacity: 0, y: 20 });
+            
+            ScrollTrigger.create({
+                trigger: "#skills", start: "top 75%",
+                onEnter: () => {
+                    gsap.to('.skill-group', { clipPath: "inset(0% 0% 0% 0% round 20px)", duration: 1.4, ease: "expo.inOut", stagger: 0.1 });
+                    gsap.to('.skill-group .glow-box-inner', { opacity: 1, y: 0, duration: 1, ease: "power4.out", stagger: 0.1, delay: 0.5 });
+                }
+            });
+
+            ['#projects', '#certificates'].forEach(secId => {
+                const section = document.querySelector(secId);
+                const tabs = section.querySelectorAll('.tab-btn');
+                const activeCards = section.querySelectorAll('.tab-panel.active .glow-box');
+                
+                gsap.set(tabs, { opacity: 0, x: -30 });
+                gsap.set(activeCards, { transformPerspective: 1000, rotateX: 90, transformOrigin: "bottom center", opacity: 0 });
+
+                ScrollTrigger.create({
+                    trigger: section, start: "top 75%",
+                    onEnter: () => {
+                        const tl = gsap.timeline();
+                        tl.to(tabs, { opacity: 1, x: 0, duration: 0.8, ease: "power3.out", stagger: 0.05 })
+                          .to(activeCards, { rotateX: 0, opacity: 1, duration: 1.4, ease: "expo.out", stagger: 0.05 }, "<0.2"); 
+                    }
+                });
+            });
+
+            gsap.to('.timeline-line-active', {
+                scrollTrigger: { trigger: "#education-container", start: "top 80%", end: "bottom 60%", scrub: true },
+                scaleY: 1, ease: "none"
+            });
+
+            document.querySelectorAll('.timeline-item').forEach((item) => {
+                const node = item.querySelector('.timeline-node');
+                const content = item.querySelector('.timeline-content');
+                
+                const tl = gsap.timeline({ scrollTrigger: { trigger: item, start: "top 85%" } });
+                tl.to(node, { scale: 1.3, duration: 0.3, ease: "back.out(2)" })
+                  .to(node, { scale: 1, duration: 0.2, ease: "power2.out" })
+                  .to(content, { opacity: 1, x: 0, duration: 1.2, ease: "power4.out" }, "-=0.3");
+            });
+            
+            // ！！性能优化：消除 Layout Thrashing，完全使用 ScrollTrigger 替代 window.onscroll ！！
+            const navbar = document.getElementById('navbar');
+            const backToTop = document.getElementById('back-to-top');
+            
+            ScrollTrigger.create({
+                start: "top -100",
+                onUpdate: (self) => { self.progress > 0 ? navbar.classList.add('scrolled') : navbar.classList.remove('scrolled'); }
+            });
+            
+            ScrollTrigger.create({
+                start: "top -300",
+                onUpdate: (self) => { self.progress > 0 ? backToTop.classList.add('show') : backToTop.classList.remove('show'); }
+            });
+
+            const navLinks = document.querySelectorAll('.nav-links a');
+            document.querySelectorAll('section, header').forEach(sec => {
+                ScrollTrigger.create({
+                    trigger: sec,
+                    start: "top center",
+                    end: "bottom center",
+                    onToggle: self => {
+                        if (self.isActive) {
+                            let id = sec.getAttribute('id');
+                            navLinks.forEach(li => {
+                                li.classList.remove('active');
+                                if (li.getAttribute('href') === `#${id}`) li.classList.add('active');
+                            });
+                        }
+                    }
+                });
+            });
+        };
+
+        const runOpeningAnimation = () => {
+            const tl = gsap.timeline();
+            tl.to(".global-curtain", { scaleY: 0, transformOrigin: "top center", duration: 1.6, ease: "expo.inOut" }, 0);
+            tl.fromTo(".hero-video-wrapper", { scale: 1.3 }, { scale: 1, duration: 4, ease: "power3.out" }, 0);
+            tl.fromTo(".scanner-line", { left: "0%", opacity: 0 }, { left: "100%", opacity: 1, duration: 1.8, ease: "power3.inOut" }, 0.8);
+            tl.fromTo("#particle-title-container", { clipPath: "inset(0 100% 0 0)" }, { clipPath: "inset(0 0% 0 0)", duration: 1.8, ease: "power3.inOut" }, 0.8);
+            tl.to(".scanner-line", { opacity: 0, duration: 0.3 }, 2.6); 
+            
+            gsap.set(".polaroid-anim-container", { perspective: 1200 });
+            tl.fromTo(".polaroid-wrapper", { z: -800, y: 150, rotationX: 50, rotationY: -30, rotationZ: -10, opacity: 0 }, { z: 0, y: 0, rotationX: 0, rotationY: 0, rotationZ: 7, opacity: 1, duration: 3, ease: "expo.out" }, 1.2);
+            tl.fromTo(".polaroid-tape", { opacity: 0, y: -20 }, { opacity: 1, y: 0, duration: 1.5, ease: "power3.out" }, 1.6);
+            tl.fromTo(".hero-center-desc", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 1.5, ease: "power3.out" }, 1.5);
+            tl.fromTo([".hero-stat-block", ".hero-slogan-block"], { opacity: 0, y: 30 }, { opacity: 1, y: 0, stagger: 0.1, duration: 1.5, ease: "power3.out" }, 1.7);
+            tl.fromTo(".navbar", { opacity: 0, y: -20 }, { opacity: 1, y: 0, duration: 1.5, ease: "power3.out" }, 2);
+        };
+
+        const initLightbox = () => {
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightbox-img');
+            const closeBtn = lightbox.querySelector('.lightbox-close');
+
+            const openLightbox = (imgSrc) => {
+                lightboxImg.src = imgSrc;
+                lightbox.classList.add('active');
+                gsap.to(lightbox, { opacity: 1, duration: 0.4, ease: "power2.out" });
+                gsap.fromTo(lightboxImg, { scale: 0.8, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.6, ease: "back.out(1.5)" });
+                document.body.style.overflow = 'hidden'; 
+            };
+
+            const closeLightbox = () => {
+                gsap.to(lightbox, { opacity: 0, duration: 0.4, ease: "power2.in", onComplete: () => {
+                    lightbox.classList.remove('active');
+                    lightboxImg.src = "";
+                }});
+                document.body.style.overflow = ''; 
+            };
+
+            document.body.addEventListener('click', (e) => {
+                const trigger = e.target.closest('.cert-trigger');
+                if (trigger) {
+                    e.preventDefault();
+                    openLightbox(trigger.dataset.img);
+                }
+            });
+
+            closeBtn.addEventListener('click', closeLightbox);
+            lightbox.addEventListener('click', (e) => {
+                if (e.target === lightbox) closeLightbox();
+            });
+        };
+
+        // ！！性能优化：非阻塞的安全加载机制 ！！
+        let hasStarted = false;
+        const startApp = () => {
+            if (hasStarted) return;
+            hasStarted = true;
+            runOpeningAnimation();
+            initScrollAnimations();
+        };
+
+        document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('current-year').textContent = new Date().getFullYear();
+            renderContacts(); renderSkills(); renderEducation();
+            buildTabs(resume.projects, 'projects-tab-nav', 'projects-tab-content', renderProjectItem, 'grid-2');
+            buildCertTabs();
+
+            initParticleText(document.getElementById('particle-title-container'), {
+                text: 'LINZIJIE', particleSize: 3.5, density: 3, color: '#00F0FF', highlightColor: '#3B82F6', 
+                fontSize: '19vw', fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif', fontWeight: '900',     
+                letterSpacing: '0.08em', trigger: 'hover', scatter: 180, pointerRepel: 80, repelRadius: 150
+            });
+            
+            initBorderGlow();
+            initLightbox();
+            
+            document.getElementById('back-to-top').addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+        });
+
+        // 确保页面资源完全加载后再拉开黑幕，如果网络过差，则 2.5 秒后强制兜底执行，防止永久黑屏
+        window.addEventListener('load', startApp);
+        setTimeout(startApp, 2500);
+
+    </script>
+</body>
+</html>
