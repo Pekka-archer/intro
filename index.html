@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>林子杰 - 通信AI算法实习 简历</title>
-    <meta name="description" content="林子杰的个人简历，求职意向为通信AI算法实习。">
+    <title>Jay Lin - Personal Digital Space | Telecom Freshman & AI Explorer</title>
+    <meta name="description" content="林子杰(Jay Lin)的个人数字空间。广雅中学毕业，现汕大通信工程26级新生。热爱AI、半马与有氧运动，建这个主页只为结识气味相投的同龄人和前辈大佬。">
     
-    <!-- ！！性能优化：增加 defer 属性，实现非阻塞异步下载 ！！ -->
+    <!-- 引入 GSAP 核心库与 ScrollTrigger -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
 
@@ -67,7 +67,6 @@
         .split-word-wrap { display: inline-block; overflow: hidden; vertical-align: top; margin-right: 0.3em; padding-bottom: 5px; }
         .split-word { display: inline-block; }
 
-        /* GSAP 开场：全局纯黑幕布 */
         .global-curtain {
             position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
             background-color: #0B1120; z-index: 9999; pointer-events: none;
@@ -219,7 +218,6 @@
         .cert-item { 
             display: flex; flex-direction: column; overflow: hidden; padding: 0 !important; cursor: pointer; text-decoration: none; 
             transform-style: preserve-3d;
-            /* 性能优化：动态添加 will-change 而不是写死 */
         }
         .cert-item:hover { box-shadow: var(--c-shadow-hover); border-color: rgba(255,255,255,0.2); --spotlight-opacity: 1; will-change: transform; }
         
@@ -368,10 +366,10 @@
         <div class="nav-container">
             <div class="nav-logo">JAY.</div>
             <div class="nav-links">
-                <a href="#profile-card" class="active">Profile</a>
-                <a href="#skills">Skills</a>
-                <a href="#projects">Projects</a>
-                <a href="#certificates">Awards</a>
+                <a href="#profile-card" class="active">关于我</a>
+                <a href="#skills">技能栈</a>
+                <a href="#projects">项目与实践</a>
+                <a href="#certificates">荣誉与认证</a>
             </div>
             <div class="nav-actions">
                 <button class="icon-btn" onclick="window.print()" aria-label="打印简历" title="打印/导出PDF">
@@ -384,7 +382,6 @@
     <div>
         <header id="hero" class="hero">
             <div class="hero-video-wrapper">
-                <!-- ！！性能优化：增加了 poster 视频占位图 ！！ -->
                 <video autoplay loop muted playsinline poster="./poster.jpg">
                     <source src="./bg-video.mp4" type="video/mp4">
                     您的浏览器不支持视频背景。
@@ -399,8 +396,8 @@
             </div>
             
             <div class="hero-center-desc">
-                求职意向：通信AI算法实习。<br>
-                专注于大语言模型（LLM）应用、AIGC视觉创作与Agent智能体构建，具备从需求分析、模型微调到部署上线的完整全流程实战能力。
+                在硬核代码与暴汗有氧之间折腾的探索者。<br>
+                汕大通信26级新生，对大模型（LLM）与智能体抱有极大热忱。建这个主页不是为了卷简历，而是想把真实的自己亮出来，在这里“捕获”气味相投的同龄人和前辈大佬。
             </div>
 
             <div class="hero-bottom-grid">
@@ -416,8 +413,8 @@
 
                 <div class="hero-stat-block">
                     <div class="stat-slash">///</div>
-                    <div class="stat-number">AIGC+</div>
-                    <div class="stat-label">AI Application & Vision Systems</div>
+                    <div class="stat-number">EXPLORE</div>
+                    <div class="stat-label">寻找同频的你 / 保持敏捷与热爱</div>
                     <div class="contact-bar" id="contact-container"></div>
                 </div>
 
@@ -443,17 +440,20 @@
                         </div>
                         
                         <div class="gsap-profile-text-wrap" style="min-width: 0;">
-                            <div class="gsap-profile-text" style="font-size: 0.8rem; font-weight: 600; color: var(--c-primary); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 8px;">Identity & Vision</div>
+                            <div class="gsap-profile-text" style="font-size: 0.8rem; font-weight: 600; color: var(--c-primary); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 8px;">个人名片</div>
                             <h2 class="gsap-profile-text" style="font-size: 2.2rem; font-weight: 700; margin-bottom: 12px; letter-spacing: 1px; color: #ffffff;">
                                 林子杰 <span style="font-size: 1rem; font-weight: 500; color: var(--c-text-muted); margin-left: 8px;">/ Jay Lin</span>
                             </h2>
                             <p class="gsap-profile-text" style="font-size: 1.05rem; line-height: 1.7; color: var(--c-text-muted); margin-bottom: 20px;">
-                                汕头大学通信工程专业本科生（2026级），极客精神与视觉审美的结合者。专注于 <strong>通信AI算法方向</strong>，深耕大模型应用落地、RAG系统、智能体（Agent）设计及前沿视觉创作。
+                                带着高考 579 分的些许不甘与期许从广东广雅中学毕业，我现在是汕头大学通信工程专业（2026级）的一名新生。与其给自己贴上各种“精通算法”的资深标签，我更愿意称自己为一个精力旺盛的“数字学徒”。<br><br>
+                                作为一个典型的 <strong>INFJ</strong>，我骨子里有一半是喜欢安静捣鼓逻辑的内倾底色——目前正在自学死磕 AI 应用层（LLM、Agent），也沉迷于 AI 视频短剧与音乐合成这类偏情绪表达的跨模态创作。<br><br>
+                                但另一半的我，又极度享受真实跳动的脉搏。——这也解释了为什么我今年 3 月刚刷完人生首个半程马拉松，日常更是健身房里死磕爬楼机、动感单车的有氧狂热分子，偶尔还会下场挥拍打打乒乓球。建这个主页，就是想用 INFJ 最舒适的方式，隔空“捕获”几个有趣、爱折腾的同龄人和学长学姐，一起搞点有意思的事！
                             </p>
                             <div class="gsap-profile-text" style="display: flex; gap: 10px; flex-wrap: wrap; justify-content: flex-start;">
-                                <span class="badge" style="background: rgba(0,240,255,0.1); border-color: rgba(0,240,255,0.3);">AI Application Dev</span>
-                                <span class="badge" style="background: rgba(0,240,255,0.1); border-color: rgba(0,240,255,0.3);">AIGC Vision Creator</span>
-                                <span class="badge" style="background: rgba(0,240,255,0.1); border-color: rgba(0,240,255,0.3);">LLM / Agent Architect</span>
+                                <span class="badge" style="background: rgba(0,240,255,0.1); border-color: rgba(0,240,255,0.3);">汕大通信26级</span>
+                                <span class="badge" style="background: rgba(0,240,255,0.1); border-color: rgba(0,240,255,0.3);">广雅校友</span>
+                                <span class="badge" style="background: rgba(0,240,255,0.1); border-color: rgba(0,240,255,0.3);">INFJ 提倡者</span>
+                                <span class="badge" style="background: rgba(0,240,255,0.1); border-color: rgba(0,240,255,0.3);">半马 Finisher</span>
                             </div>
                         </div>
                         
@@ -462,24 +462,24 @@
             </section>
 
             <section id="skills">
-                <h2 class="section-title">Skills Matrix</h2>
+                <h2 class="section-title">技能栈</h2>
                 <div class="grid-3" id="skills-container"></div>
             </section>
 
             <section id="projects">
-                <h2 class="section-title">Projects & Practice</h2>
+                <h2 class="section-title">项目与实践</h2>
                 <div class="tabs-nav no-print" role="tablist" id="projects-tab-nav"></div>
                 <div id="projects-tab-content"></div>
             </section>
 
             <section id="certificates">
-                <h2 class="section-title">Certifications</h2>
+                <h2 class="section-title">探索与认证</h2>
                 <div class="tabs-nav no-print" role="tablist" id="certs-tab-nav"></div>
                 <div id="certs-tab-content"></div>
             </section>
 
             <section id="education">
-                <h2 class="section-title">Education</h2>
+                <h2 class="section-title">教育经历</h2>
                 <div class="timeline" id="education-container" style="border-left: none; padding-left: 60px;"></div>
             </section>
         </div>
@@ -512,7 +512,6 @@
         const resolveFontSize = (value, container, fontWeight, fontFamily) => { if (typeof value === 'number') return value; const probe = document.createElement('span'); probe.textContent = 'M'; probe.style.position = 'absolute'; probe.style.visibility = 'hidden'; probe.style.pointerEvents = 'none'; probe.style.fontSize = value; probe.style.fontWeight = String(fontWeight); probe.style.fontFamily = fontFamily; container.appendChild(probe); const size = parseFloat(window.getComputedStyle(probe).fontSize) || 96; probe.remove(); return size; };
         const waitForFonts = async font => { if (!('fonts' in document)) return; try { await document.fonts.load(font); } catch {} await document.fonts.ready; };
 
-        // ！！性能优化：WebGL 加入 IntersectionObserver 智能休眠机制 ！！
         const initParticleText = (containerElement, config) => {
             const {
                 text = 'LINZIJIE', particleSize = 3, density = 4, color = '#FF2A00', highlightColor = '#ffffff',
@@ -529,7 +528,7 @@
             let particles = [], animationFrame = null, resizeFrame = null, buildId = 0, gathering = false, gatherStart = 0;
             let width = 0, height = 0, dpr = 1;
             let reducedMotion = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches ?? false;
-            let isRendering = true; // WebGL 休眠标识
+            let isRendering = true;
 
             const pointer = { active: false, x: 0, y: 0, smoothX: 0, smoothY: 0 };
 
@@ -557,7 +556,7 @@
             };
 
             const render = now => {
-                if (!isRendering) return; // 不在视口则暂停计算
+                if (!isRendering) return;
 
                 ctx.clearRect(0, 0, width, height);
                 if (glow && !reducedMotion) { ctx.shadowBlur = particleSize * 3; ctx.shadowColor = highlightColor; } else { ctx.shadowBlur = 0; }
@@ -693,7 +692,6 @@
                 if (animationFrame === null) animationFrame = window.requestAnimationFrame(render);
             };
 
-            // ！！性能优化：WebGL 交叉观察器，离开屏幕立即停止计算 ！！
             const io = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
@@ -745,28 +743,28 @@
             },
             education: [ { school: "汕头大学", major: "通信工程专业", degree: "本科", time: "2026.09 - 2030.06 (预期)", courses: "信号与系统、通信原理、数据结构与算法、人工智能导论", gpa: "待补，入学后更新" } ],
             skills: [
-                { category: "AI应用与Agent", desc: "熟练掌握大模型应用全流程：Prompt工程、RAG系统构建、Fine-tuning及Agent开发。", tags: ["LangChain", "Spring AI", "Function Calling", "RAG", "Dify"] },
-                { category: "AIGC与视觉创作", desc: "精通AI视觉创作全流程设计，擅长使用ControlNet精准控制构图、结合LoRA进行风格微调。", tags: ["Stable Diffusion", "PAI ArtLab", "ControlNet", "LoRA", "ComfyUI"] },
-                { category: "大模型微调部署", desc: "采用LoRA高效参数微调方法，对LLaMA等开源模型进行指令微调，降低硬件依赖并提升质量。", tags: ["ModelScope", "PyTorch", "讯飞星辰", "Qwen", "PEFT", "vLLM"] },
-                { category: "编程与数据工程", desc: "Python基础扎实，熟练使用Pandas/NumPy清洗数据。熟练使用AI编码工具提效。", tags: ["Python", "Pandas/NumPy", "Git", "AI Coding", "Docker", "Linux"] },
-                { category: "计算机视觉(CV)", desc: "具备端到端的目标检测系统实战经验，涵盖数据增强、超参调优、模型训练与推理部署优化。", tags: ["YOLOv8", "OpenCV", "昇腾AI云服务", "MindSpore", "目标检测"] },
-                { category: "AI效能工具与研发框架", desc: "深度运用通义灵码、豆包MarsCode等AI辅助编码工具，结合Spring AI、华为CodeArts等开发框架，实现全链路研发提效。", tags: ["Cursor", "Spring AI", "MarsCode", "通义灵码", "CodeArts"] }
+                { category: "AI 应用层调教 (Agent & RAG)", desc: "沉迷于给大模型加“外脑”和四肢。不只是调接口，更喜欢深挖 Prompt 工程，看着 Agent 一步步按规划把事干漂亮。", tags: ["LangChain", "Spring AI", "Function Calling", "RAG", "Dify"] },
+                { category: "跨模态视觉把玩 (AIGC)", desc: "喜欢把脑子里的天马行空变成像素。熟悉 Stable Diffusion 和 ComfyUI，平时爱折腾 ControlNet 控图和特定风格的 LoRA 炼丹。", tags: ["Stable Diffusion", "PAI ArtLab", "ControlNet", "LoRA", "ComfyUI"] },
+                { category: "大模型微调实践 (Fine-tuning)", desc: "算力有限但好奇心无限。热衷用 LoRA 等低成本方式给开源模型（Qwen/LLaMA）“喂”特定数据，体验给模型注入新灵魂的快乐。", tags: ["ModelScope", "PyTorch", "讯飞星辰", "Qwen", "PEFT", "vLLM"] },
+                { category: "数字世界的扳手 (Python & 数据)", desc: "Python 是我的数字瑞士军刀。拿它写写脚本、洗洗数据，外加一套 Docker 环境，能把脑子里的想法快速跑起来。", tags: ["Python", "Pandas/NumPy", "Git", "AI Coding", "Docker", "Linux"] },
+                { category: "机器视觉初探 (CV / YOLO)", desc: "曾经手搓过基于 YOLOv8 的目标检测系统，完整走过数据增强到模型推理的链路。看着机器精准框出目标的瞬间，依然觉得很神奇。", tags: ["YOLOv8", "OpenCV", "昇腾AI云服务", "MindSpore", "目标检测"] },
+                { category: "人机协同工作流 (AI 工具链)", desc: "极度依赖通义灵码、Cursor 这类 AI 工具。习惯把重复造轮子的事扔给 AI，把自己的精力留给更有趣的逻辑探索。", tags: ["Cursor", "Spring AI", "MarsCode", "通义灵码", "CodeArts"] }
             ],
             projects: {
-                "LLM与智能体": [
-                    { name: "AI Agent智能体应用开发", meta: "蚂蚁百宝箱Agent平台、ModelScope、Function Calling", desc: ["实现从用户意图理解到任务自动拆解执行的完整链路，涵盖规划、工具使用和反思。","完成多轮对话状态管理与记忆机制设计，提升Agent连贯性。"] },
-                    { name: "基于RAG的智能问答系统开发", meta: "阿里云百炼平台、LangChain、通义千问、向量数据库", desc: ["采用RAG架构解决大模型垂直领域幻觉问题，实现文档自动化索引。","设计混合检索策略，问答准确率提升约30%；优化Prompt，回答质量提升约40%。"] }
+                "对话与思考：Agent & RAG": [
+                    { name: "从零手搓的 AI Agent 智能体", meta: "蚂蚁百宝箱Agent平台、ModelScope、Function Calling", desc: ["不想只做大模型的复读机，所以尝试给它加了记忆与反思机制。","让它能自动拆解任务、调用工具，看着它一步步连贯思考还挺好玩的。"] },
+                    { name: "基于 RAG 的防幻觉外脑", meta: "阿里云百炼平台、LangChain、通义千问、向量数据库", desc: ["大模型总爱胡说八道？用 LangChain 挂载本地知识库，解决了特定领域的幻觉。","优化了混合检索策略和 Prompt，回答准确率肉眼可见地提升了。"] }
                 ],
-                "AIGC与视觉": [
-                    { name: "基于AIGC的视觉艺术创作实践", meta: "阿里云PAI ArtLab、华为云VISION、Stable Diffusion", desc: ["完成20+组风格化视觉作品，通过ControlNet实现精确构图与姿态控制。","针对特定风格进行LoRA微调，训练效率提升25%。","完成企业专属海报实战，产出适配企业的标准化视觉模板。"] }
+                "色彩与像素：AIGC 创作": [
+                    { name: "AIGC 视觉与风格化探索", meta: "阿里云PAI ArtLab、华为云VISION、Stable Diffusion", desc: ["不只是随缘抽卡，而是利用 ControlNet 实现精确构图与姿态控制。","自己炼了几版特定风格的 LoRA，还顺手搞定了适配企业的标准化视觉模板输出。"] }
                 ],
-                "模型微调与CV": [
-                    { name: "大语言模型微调与部署实践", meta: "讯飞星辰平台、ModelScope、PyTorch、LoRA", desc: ["完成LLaMA、Qwen等模型微调，参数量减少90%以上。","垂直场景指令微调ROUGE评分提升约15%。"] },
-                    { name: "基于昇腾AI的YOLOv8目标检测系统", meta: "华为云昇腾AI云服务、YOLOv8", desc: ["数据集超10,000张标注图像，涵盖20+目标类别。","模型mAP达到87.5%，推理速度达实时要求(30+ FPS)。"] }
+                "底座与感知：微调 & CV": [
+                    { name: "开源模型的低成本“炼丹”", meta: "讯飞星辰平台、ModelScope、PyTorch、LoRA", desc: ["显卡不够，LoRA 来凑。在有限算力下对 LLaMA 和 Qwen 做了垂直场景的指令微调。","看着模型越来越懂特定领域的语境，成就感满满。"] },
+                    { name: "YOLOv8 目标检测实战跑通", meta: "华为云昇腾AI云服务、YOLOv8", desc: ["自己一点点折腾上万张标注图像的训练集，从数据增强干到超参调优。","最终把 mAP 刷到了 87.5%，推理速度也能稳稳跑在 30+ FPS，很有折腾的快感。"] }
                 ]
             },
             certificates: {
-                "大模型与微调": [
+                "大模型与炼丹": [
                     { name: "LLM Engineer (大语言模型)", org: "Datawhale × 趋动云", time: "2026.08", image: "./certs/llm-engineer.jpg" },
                     { name: "大模型开发工程师", org: "Datawhale × 浪潮信息", time: "2026.08", image: "./certs/llm-dev.jpg" },
                     { name: "Fine-tuning Engineer", org: "Datawhale × 科大讯飞", time: "2026.08", image: "./certs/finetune-dw.jpg" },
@@ -780,7 +778,7 @@
                     { name: "RAG应用构建及优化", org: "阿里云Apsara Clouder", time: "2026.07", image: "./certs/rag-aliyun.jpg" },
                     { name: "基于百炼平台构建智能体应用", org: "阿里云Apsara Clouder", time: "2026.07", image: "./certs/agent-aliyun.jpg" }
                 ],
-                "Prompt与工程基础": [
+                "Prompt与基建": [
                     { name: "Prompt Engineer", org: "Datawhale × 讯飞星火", time: "2026.08", image: "./certs/prompt-dw.jpg" },
                     { name: "Prompt工程师认证", org: "科大讯飞AI大学堂", time: "2026.08", image: "./certs/prompt-ifly.jpg" },
                     { name: "大模型的咒语-Prompt工程", org: "华为云微认证", time: "2026.08", image: "./certs/prompt-huawei.jpg" },
@@ -788,14 +786,14 @@
                     { name: "AI+编程能力认证", org: "Datawhale × 豆包MarsCode", time: "2026.08", image: "./certs/ai-coding.jpg" },
                     { name: "AI+数据分析能力认证", org: "Datawhale × 商汤", time: "2026.08", image: "./certs/ai-analysis.jpg" }
                 ],
-                "CV视觉与内容生成": [
+                "像素与视觉 (AIGC)": [
                     { name: "基于PAI ArtLab的AIGC设计基础", org: "阿里云Apsara Clouder", time: "2026.07", image: "./certs/aigc-artlab.jpg" },
                     { name: "VISION人工智能设计（进阶）", org: "阿里云Apsara Clouder", time: "2026.07", image: "./certs/vision-adv.jpg" },
                     { name: "VISION人工智能设计（入门）", org: "阿里云Apsara Clouder", time: "2026.07", image: "./certs/vision-basic.jpg" },
                     { name: "AI打造专属企业风格海报", org: "华为云微认证", time: "2026.08", image: "./certs/ai-poster.jpg" },
                     { name: "利用大模型提升内容生产能力", org: "阿里云Apsara Clouder", time: "2026.07", image: "./certs/content-gen.jpg" }
                 ],
-                "AI平台架构与研发": [
+                "开发与折腾日常": [
                     { name: "基于昇腾云服务训练YOLOv8模型", org: "华为云微认证", time: "2026.08", image: "./certs/yolo-huawei.jpg" },
                     { name: "基于AIAgent实现人机AI扑克对战", org: "华为云微认证", time: "2026.08", image: "./certs/poker-agent.jpg" },
                     { name: "华为云码道鸿蒙应用开发实战", org: "华为云微认证", time: "2026.08", image: "./certs/harmony-os.jpg" },
@@ -902,7 +900,6 @@
                 </div>
             </div>`;
 
-        // ！！性能优化：为图片增加 loading="lazy" 属性 ！！
         const renderCertItem = (c) => `
             <a href="#" class="cert-item glow-box cert-trigger" data-img="${c.image || './avatar.jpg'}">
                 <div class="edge-light"></div>
@@ -927,15 +924,14 @@
                 <div class="cert-micro-org">${c.org}</div>
             </div>`;
 
-        // ！！性能优化：修复卡顿，缓存 getBoundingClientRect() ！！
         const init3DTilt = () => {
             const cards = document.querySelectorAll('.cert-item');
             cards.forEach(card => {
                 const glare = card.querySelector('.cert-glare');
-                let rect = null; // 缓存坐标
+                let rect = null; 
                 
                 const handleMouseEnter = () => {
-                    rect = card.getBoundingClientRect(); // 仅在移入时读取一次
+                    rect = card.getBoundingClientRect(); 
                     gsap.to(card, { y: -5, scale: 1.02, duration: 0.3, ease: "power2.out" });
                 };
 
@@ -956,7 +952,7 @@
                 };
                 
                 const handleMouseLeave = () => {
-                    rect = null; // 清除缓存
+                    rect = null; 
                     gsap.to(card, { y: 0, scale: 1, rotateX: 0, rotateY: 0, duration: 0.8, ease: "elastic.out(1, 0.4)" });
                     if(glare) gsap.to(glare, { x: 0, y: 0, duration: 0.8 });
                 };
@@ -1084,22 +1080,26 @@
                 });
             });
 
-            gsap.to('.timeline-line-active', {
-                scrollTrigger: { trigger: "#education-container", start: "top 80%", end: "bottom 60%", scrub: true },
-                scaleY: 1, ease: "none"
-            });
+            const eduTimelineLine = document.querySelector('.timeline-line-active');
+            if(eduTimelineLine) {
+                gsap.to('.timeline-line-active', {
+                    scrollTrigger: { trigger: "#education-container", start: "top 80%", end: "bottom 60%", scrub: true },
+                    scaleY: 1, ease: "none"
+                });
+            }
 
             document.querySelectorAll('.timeline-item').forEach((item) => {
                 const node = item.querySelector('.timeline-node');
                 const content = item.querySelector('.timeline-content');
                 
+                // 修复关键：使用 fromTo 确保无论初始状态如何，都能正确入场
                 const tl = gsap.timeline({ scrollTrigger: { trigger: item, start: "top 85%" } });
-                tl.to(node, { scale: 1.3, duration: 0.3, ease: "back.out(2)" })
+                
+                tl.fromTo(node, { scale: 0 }, { scale: 1.3, duration: 0.3, ease: "back.out(2)" })
                   .to(node, { scale: 1, duration: 0.2, ease: "power2.out" })
-                  .to(content, { opacity: 1, x: 0, duration: 1.2, ease: "power4.out" }, "-=0.3");
+                  .fromTo(content, { opacity: 0, x: 30 }, { opacity: 1, x: 0, duration: 1.2, ease: "power4.out" }, "-=0.3");
             });
             
-            // ！！性能优化：消除 Layout Thrashing，完全使用 ScrollTrigger 替代 window.onscroll ！！
             const navbar = document.getElementById('navbar');
             const backToTop = document.getElementById('back-to-top');
             
@@ -1183,7 +1183,6 @@
             });
         };
 
-        // ！！性能优化：非阻塞的安全加载机制 ！！
         let hasStarted = false;
         const startApp = () => {
             if (hasStarted) return;
@@ -1210,7 +1209,6 @@
             document.getElementById('back-to-top').addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
         });
 
-        // 确保页面资源完全加载后再拉开黑幕，如果网络过差，则 2.5 秒后强制兜底执行，防止永久黑屏
         window.addEventListener('load', startApp);
         setTimeout(startApp, 2500);
 
