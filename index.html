@@ -7,8 +7,8 @@
     <meta name="description" content="林子杰(Jay Lin)的个人数字空间。广雅中学毕业，现汕大通信工程26级新生。热爱AI、半马与有氧运动，建这个主页只为结识气味相投的同龄人和前辈大佬。">
     
     <!-- 引入 GSAP 核心库与 ScrollTrigger -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
+    <script src="./vendor/gsap.min.js" defer></script>
+    <script src="./vendor/ScrollTrigger.min.js" defer></script>
 
     <style>
         /* ================= 核心变量 ("深空极客" Apple Bento 科技风) ================= */
@@ -98,7 +98,7 @@
             color: #ffffff; overflow: hidden; border-bottom: 1px solid rgba(255,255,255,0.05);
         }
 
-        .hero-video-wrapper { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; background-color: #0B1120; transform-origin: center center; }
+        .hero-video-wrapper { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; background-color: #0B1120; background-image: url('./poster.jpg'); background-size: cover; background-position: center; transform-origin: center center; }
         .hero-video-wrapper video { width: 100%; height: 100%; object-fit: cover; object-position: center; opacity: 0.6; }
         .hero-video-overlay {
             position: absolute; top: 0; left: 0; width: 100%; height: 100%;
@@ -382,7 +382,7 @@
     <div>
         <header id="hero" class="hero">
             <div class="hero-video-wrapper">
-                <video autoplay loop muted playsinline poster="./poster.jpg">
+                <video id="hero-video" autoplay loop muted playsinline webkit-playsinline x5-playsinline x5-video-player-type="h5" x5-video-player-fullscreen="false" preload="auto" poster="./poster.jpg">
                     <source src="./bg-video.mp4" type="video/mp4">
                     您的浏览器不支持视频背景。
                 </video>
@@ -405,7 +405,7 @@
                     <div class="polaroid-anim-container">
                         <div class="polaroid-wrapper" title="这不仅是简历，更是我的名片">
                             <div class="polaroid-tape"></div>
-                            <img src="./avatar.jpg" alt="林子杰" class="polaroid-img">
+                            <img src="./avatar-opt.jpg" alt="林子杰" class="polaroid-img">
                             <div class="polaroid-text">JAY.</div>
                         </div>
                     </div>
@@ -436,7 +436,7 @@
                     <div class="glow-box-inner profile-inner-grid" style="display: grid; grid-template-columns: auto 1fr; gap: 40px; align-items: center; padding: 40px;">
                         
                         <div class="gsap-profile-avatar-wrap" style="width: 150px; height: 150px; border-radius: 50%; overflow: hidden; background: #111; box-shadow: 0 10px 25px rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.1);">
-                            <img src="./avatar.jpg" alt="林子杰" class="gsap-profile-img" style="width: 100%; height: 100%; object-fit: cover;">
+                            <img src="./avatar-opt.jpg" alt="林子杰" class="gsap-profile-img" style="width: 100%; height: 100%; object-fit: cover;">
                         </div>
                         
                         <div class="gsap-profile-text-wrap" style="min-width: 0;">
@@ -900,12 +900,15 @@
                 </div>
             </div>`;
 
+        const certThumb = (src) => src.replace('./certs/', './certs/thumb/');
+        const certLarge = (src) => src.replace('./certs/', './certs/large/');
+
         const renderCertItem = (c) => `
-            <a href="#" class="cert-item glow-box cert-trigger" data-img="${c.image || './avatar.jpg'}">
+            <a href="#" class="cert-item glow-box cert-trigger" data-img="${c.image ? certLarge(c.image) : './avatar.jpg'}">
                 <div class="edge-light"></div>
                 <div class="cert-glare-wrap"><div class="cert-glare"></div></div>
                 <div class="cert-img-wrap">
-                    <img src="${c.image || './avatar.jpg'}" alt="${c.name}" class="cert-img" loading="lazy" onerror="this.src='./avatar.jpg'">
+                    <img src="${c.image ? certThumb(c.image) : './avatar.jpg'}" alt="${c.name}" class="cert-img" loading="lazy" decoding="async" fetchpriority="low" onerror="this.src='./avatar.jpg'">
                     <div class="cert-img-overlay"></div>
                 </div>
                 <div class="cert-content">
@@ -1183,10 +1186,31 @@
             });
         };
 
+        const initHeroVideo = () => {
+            const video = document.getElementById('hero-video');
+            if (!video) return;
+            const tryPlay = () => {
+                video.muted = true;
+                const p = video.play();
+                if (p && p.catch) p.catch(() => {});
+            };
+            video.addEventListener('canplay', tryPlay);
+            document.addEventListener('WeixinJSBridgeReady', tryPlay, false);
+            document.addEventListener('touchstart', tryPlay, { once: true, passive: true });
+            document.addEventListener('click', tryPlay, { once: true });
+            document.addEventListener('visibilitychange', () => { if (!document.hidden) tryPlay(); });
+            tryPlay();
+        };
+
         let hasStarted = false;
         const startApp = () => {
             if (hasStarted) return;
             hasStarted = true;
+            if (typeof gsap === 'undefined') {
+                document.querySelector('.global-curtain').style.display = 'none';
+                document.getElementById('navbar').style.opacity = '1';
+                return;
+            }
             runOpeningAnimation();
             initScrollAnimations();
         };
@@ -1205,6 +1229,7 @@
             
             initBorderGlow();
             initLightbox();
+            initHeroVideo();
             
             document.getElementById('back-to-top').addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
         });
